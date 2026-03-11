@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Classical Dances of India</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f5f5f5;
+}
+
+header{
+background:#d3cfcd;
+color:rgb(38, 36, 36);
+text-align:center;
+padding:25px;
+}
+
+.container{
+width:90%;
+margin:auto;
+padding:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card h3{
+text-align:center;
+padding:10px;
+color:#dea47e;
+}
+
+.details{
+display:none;
+background:white;
+padding:30px;
+margin-top:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:6px;
+}
+
+button{
+margin-top:20px;
+padding:10px 20px;
+background:#ff6600;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1> Classical Dances of India</h1>
+</header>
+
+<div class="container">
+
+<div class="grid">
+
+<div class="card" onclick="showDance('bharatanatyam')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Bharata_Natyam_Performance_DS.jpg/960px-Bharata_Natyam_Performance_DS.jpg">
+<h3>Bharatanatyam</h3>
+</div>
+
+<div class="card" onclick="showDance('kathak')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Kathak_3511900193_986f6440f6_b_retouched.jpg/250px-Kathak_3511900193_986f6440f6_b_retouched.jpg">
+<h3>Kathak</h3>
+</div>
+
+<div class="card" onclick="showDance('kathakali')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Kathakali_BNC.jpg/250px-Kathakali_BNC.jpg">
+<h3>Kathakali</h3>
+</div>
+
+<div class="card" onclick="showDance('kuchipudi')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Kuchipudi_Performer_DS.jpg/250px-Kuchipudi_Performer_DS.jpg">
+<h3>Kuchipudi</h3>
+</div>
+
+<div class="card" onclick="showDance('manipuri')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Rasa_Lila_in_Manipuri_dance_style.jpg/250px-Rasa_Lila_in_Manipuri_dance_style.jpg">
+<h3>Manipuri</h3>
+</div>
+
+<div class="card" onclick="showDance('mohiniyattam')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Mohiniyattom_performance.jpg/250px-Mohiniyattom_performance.jpg">
+<h3>Mohiniyattam</h3>
+</div>
+
+<div class="card" onclick="showDance('odissi')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Odissi_Performance_DS.jpg/250px-Odissi_Performance_DS.jpg">
+<h3>Odissi</h3>
+</div>
+
+<div class="card" onclick="showDance('sattriya')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Sattriya_dance_of_India_by_Shagil_Kannur_4.jpg/250px-Sattriya_dance_of_India_by_Shagil_Kannur_4.jpg">
+<h3>Sattriya</h3>
+</div>
+
+</div>
+
+
+<div id="danceDetails" class="details"></div>
+
+</div>
+
+</body>
+</html>
