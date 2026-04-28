@@ -42,19 +42,13 @@ h2{
 
 /* Gallery Images */
 .gallery img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 300px;      /* same width */
+    height: 300px;   
+    gap: 20px;  /* same height */
+    object-fit: cover; /* keeps image nice without stretching */
+    border-radius: 10px; /* optional for design */
 }
 
-/* Gallery Layout */
-.gallery{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-items: center;
-}
 
 </style>
 
@@ -102,13 +96,14 @@ Over time, it became a popular classical dance form and is now performed worldwi
 
 <div class="gallery">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Kuchipudi_dancer.jpg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Kuchipudi_pose.jpg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Kuchipudi_dance_performance.jpg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Kuchipudi_artist.jpg">
+<img src="dance_poses/kuchipudi1.jpg">
+<img src="dance_poses/kuchipudi4.jpg">
+<img src="dance_poses/kuchipudi3.jpg">
+<img src="dance_poses/kuchipudi2.jpg">
+<img src="dance_poses/kuchipudi5.jpg">
 
 </div>
 
 </body>
-
+<footer style="padding: 1cm;"> </footer>
 </html>
