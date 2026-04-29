@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kathak Dance</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    text-align: center;
+    margin: 40px;
+    background-color: #fff5e6;
+}
+
+/* Title */
+.title{
+    color: #ff6600;
+    font-size: 40px;
+}
+
+/* Main Image */
+.dance-img{
+    width:250px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+/* Paragraph */
+p{
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: justify;
+}
+
+/* Section Heading */
+h2{
+    color:#ff6600;
+    text-align: center;
+}
+
+/* Gallery Images */
+.gallery img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    align-items: center;
+}
+
+/* Gallery Layout */
+.gallery img {
+    width: 300px;      /* same width */
+    height: 300px;   
+    gap: 20px;  /* same height */
+    object-fit: cover; /* keeps image nice without stretching */
+    border-radius: 10px; /* optional for design */
+}
+.back-btn{
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 18px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.back-btn:hover{
+    background-color: #cc5200;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1 class="title">Kathak – Classical Dance</h1>
+
+<img src="{{ url_for('static', filename='dance_poses/kathakm.jpg') }}" class="dance-img">
+<p>
+Kathak is one of the major classical dance forms of India, originating from North India. 
+The name Kathak comes from the word "Katha", meaning story, and the dancers are known as storytellers.
+</p>
+
+<p>
+Kathak combines rhythmic footwork, fast spins (chakkars), expressive gestures, and graceful movements. 
+It is performed with classical music and often includes storytelling based on mythology and history.
+</p>
+
+<p>
+The dance is known for its intricate footwork enhanced by ankle bells (ghungroo) and expressive eye movements.
+</p>
+
+<h2>History</h2>
+
+<p>
+Kathak began as a temple dance performed by storytellers who narrated tales from epics like the Ramayana and Mahabharata. 
+Later, it developed in royal courts, especially during the Mughal period, gaining elegance and refinement.
+</p>
+
+<h2>Main Elements</h2>
+
+<p><b>Tatkar:</b> Basic footwork patterns.</p>
+<p><b>Chakkars:</b> Fast spins.</p>
+<p><b>Abhinaya:</b> Expression and storytelling.</p>
+<p><b>Ghungroo:</b> Musical ankle bells.</p>
+
+<h2>Gallery</h2>
+
+<div class="gallery">
+
+<div class="gallery">
+
+<img src="{{ url_for('static', filename='dance_poses/kathak1.jpg') }}">
+<img src="{{ url_for('static', filename='dance_poses/kathak2.jpg') }}">
+<img src="{{ url_for('static', filename='dance_poses/kathak3.jpg') }}">
+<img src="{{ url_for('static', filename='dance_poses/kathak4.jpg') }}">
+
+</div>
+</div>
+<a href="/classicaldance" class="back-btn">Back</a>
+</body>
+<footer style="padding: 1cm;"> </footer>
+</html>

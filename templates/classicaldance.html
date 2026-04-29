@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Classical Dances of India</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f5f5f5;
+}
+
+header{
+background:#d3cfcd;
+color:rgb(38, 36, 36);
+text-align:center;
+padding:25px;
+}
+
+.container{
+width:90%;
+margin:auto;
+padding:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;        /* fixed box height */
+    object-fit: contain;  /* shows full image */
+    background-color: #f5f5f5; /* optional: fills empty space */
+}
+.card h3{
+text-align:center;
+padding:10px;
+color:#dea47e;
+}
+
+.details{
+display:none;
+background:white;
+padding:30px;
+margin-top:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:6px;
+}
+
+button{
+margin-top:20px;
+padding:10px 20px;
+background:#ff6600;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+
+    .navbar{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2{
+    color: white;
+    margin: 0;
+}
+
+.nav-buttons a{
+    text-decoration: none;
+}
+
+.nav-buttons button{
+    padding: 8px 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:orange;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nav-buttons button:hover{
+    background-color: #e65c00;
+} 
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<h1>Classical Dance of India</h1>
+<div class="nav-buttons">
+    <a href="/index">
+        <button>Back to Home Page</button>
+    </a>
+</div>
+</div>
+<div class="container">
+
+<div class="grid">
+<a href="/bharatnatyam" style="text-decoration:none;">
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Bharata_Natyam_Performance_DS.jpg/960px-Bharata_Natyam_Performance_DS.jpg">
+<h3>Bharatanatyam</h3>
+</div>
+</a>
+
+<a href="/kathak" style="text-decoration:none;">
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Kathak_3511900193_986f6440f6_b_retouched.jpg/250px-Kathak_3511900193_986f6440f6_b_retouched.jpg">
+<h3>Kathak</h3>
+</div>
+</a>
+
+<a href="kathakali.html" style="text-decoration:none;">
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Kathakali_BNC.jpg/250px-Kathakali_BNC.jpg">
+<h3>Kathakali</h3>
+</div>
+</a>
+
+<a href="kuchipudi.html" style="text-decoration:none;">
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Kuchipudi_Performer_DS.jpg/250px-Kuchipudi_Performer_DS.jpg">
+<h3>Kuchipudi</h3>
+</div>
+</a>
+
+<a href="manipuri.html" style="text-decoration:none;">
+  <div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Rasa_Lila_in_Manipuri_dance_style.jpg/250px-Rasa_Lila_in_Manipuri_dance_style.jpg">
+<h3>Manipuri</h3>
+</div>
+</a>
+
+<a href="mohiniyattam.html" style="text-decoration:none;">
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Mohiniyattom_performance.jpg/250px-Mohiniyattom_performance.jpg">
+<h3>Mohiniyattam</h3>
+</div>
+</a>
+
+<a href="odissi.html" style="text-decoration:none;">
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Odissi_Performance_DS.jpg/250px-Odissi_Performance_DS.jpg">
+<h3>Odissi</h3>
+</div>
+</a>
+
+<a href="sattriya.html" style="text-decoration:none;">
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Sattriya_dance_of_India_by_Shagil_Kannur_4.jpg/250px-Sattriya_dance_of_India_by_Shagil_Kannur_4.jpg">
+<h3>Sattriya</h3>
+</div>
+</a>
+
+</div>
+
+
+<div id="danceDetails" class="details"></div>
+
+</div>
+
+</body>
+<footer style="padding: 1cm;"> </footer>
+</html>

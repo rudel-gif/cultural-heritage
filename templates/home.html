@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cultural Heritage of India</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f5f5f5;
+}
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:linear-gradient(135deg,#ff5722,#ffcc00);
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* LOGO */
+.logo{
+    font-size:20px;
+    font-weight:bold;
+    color:white;
+}
+
+/* NAV LINKS */
+.nav{
+    display:flex;
+    gap:18px;
+    align-items:center;
+}
+
+.nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    padding:8px 12px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+/* hover effect */
+.nav a:hover{
+    background:white;
+    color:#ff5722;
+}
+
+/* LOGIN / REGISTER BUTTONS */
+.btn{
+    background:white;
+    color:#ff5722 !important;
+    padding:8px 15px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#222;
+    color:white !important;
+}
+/* HERO FIXED */
+.hero{
+    position:relative;
+    height:100vh;   /* fixed */
+    overflow:hidden;
+}
+
+.hero img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    position:absolute;
+    display:none;
+}
+
+.hero img.active {
+    display:block;
+}
+
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-radius:10px;
+}
+
+.hero-text h1{
+    font-size:40px;
+}
+
+.hero-text button{
+    padding:10px 20px;
+    border:none;
+    background:#ff5722;
+    color:white;
+    cursor:pointer;
+}
+
+/* HORIZONTAL SCROLL */
+.scroll-container{
+    display:flex;
+    overflow-x:auto;
+    gap:25px;
+    padding:20px;
+    scroll-behavior:smooth;
+}
+
+.scroll-container::-webkit-scrollbar{
+    display:none;
+}
+
+.card{
+    min-width: 320px;   /* bigger cards */
+    flex: 0 0 auto;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.card h3{
+    text-align:center;
+}
+
+/* SEARCH */
+.search-box{
+    text-align:center;
+    margin:30px;
+}
+
+.search-box input{
+    width:55%;
+    padding:14px 20px;
+    border-radius:30px;
+    border:none;
+    outline:none;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    font-size:16px;
+    transition:0.3s;
+}
+
+/* focus effect */
+.search-box input:focus{
+    width:65%;
+    box-shadow:0 6px 18px rgba(255,87,34,0.4);
+    border:2px solid #ff5722;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+/* TRADITIONS CONTENT */
+.tradition-card{
+    background:white;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.tradition-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+/* DARK MODE */
+.dark{
+    background:#121212;
+    color:white;
+}
+.dark .tradition-card{
+    background:#1e1e1e;
+    color:white;
+}
+
+.dark .card{
+    background:#1e1e1e;
+    color:white;
+}
+
+.dark .hero-text{
+    color:white;
+}
+
+/*footer*/
+.footer{
+    background: linear-gradient(135deg, #111, #222);
+    color:white;
+    padding:40px 20px 10px 20px;
+    margin-top:50px;
+}
+
+.footer-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    gap:20px;
+}
+
+.footer-box{
+    width:220px;
+}
+
+.footer-box h2,
+.footer-box h3{
+    color:#ffcc00;
+}
+
+.footer-box ul{
+    list-style:none;
+    padding:0;
+}
+
+.footer-box ul li{
+    margin:8px 0;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.footer-box ul li:hover{
+    color:#ff5722;
+    padding-left:5px;
+}
+
+.footer-bottom{
+    text-align:center;
+    margin-top:30px;
+    padding-top:15px;
+    border-top:1px solid #444;
+    font-size:14px;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+<header class="header">
+
+  <div class="logo">
+    Indian Cultural Heritage & Traditions
+  </div>
+
+  <nav class="nav">
+    <a href="home.html">Home</a>
+    <a href="about.html">About Us</a>
+
+    <a href="login.html" class="btn">Login</a>
+    <a href="register.html" class="btn">Register</a>
+  </nav>
+
+</header>
+<!-- HERO -->
+<div class="hero">
+    <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523" class="active">
+<img src="https://www.fabhotels.com/blog/wp-content/uploads/2019/05/Gateway-Of-India_600-1.jpg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Qutub_Minar_at_sunset_in_August.jpg">
+    
+    <div class="hero-text">
+        <h1>Explore India’s Cultural Heritage & Traditions</h1>
+        <button onclick="scrollToSection()">Explore Now</button>
+    </div>
+</div>
+
+<!-- SEARCH -->
+<div class="search-box">
+    <input type="text" id="search" placeholder="🔍 Search culture, festivals, traditions..." onkeyup="searchItems()">
+</div>
+
+<!-- HORIZONTAL -->
+<h2 style="padding-left:40px;">INDIAN CULTURE AND TRADITIONS</h2>
+
+<div class="scroll-container">
+
+    <div class="card">
+        <img src="https://www.marriagecolours.com/wp-content/uploads/2025/04/Sindhu-Nikhilesh-Wedding-Banner.jpg">
+        <h3>Wedding Traditions</h3>
+    </div>
+
+    <div class="card">
+        <img src="https://media.licdn.com/dms/image/v2/D5612AQEWOtPtAiNySQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1708089635160?e=2147483647&v=beta&t=YWU0eEV31id0FniJFwR_lzBEdEyNhRXN4gJ04kw4--E">
+        <h3>Yoga & Meditation</h3>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6xMyC16PGZoB7Zn_Z-QWhom-Ea4pwq9dbgg&s">
+        <h3>Diwali Rituals</h3>
+    </div>
+
+    <div class="card">
+        <img src="https://thumbs.dreamstime.com/b/vibrant-crowd-celebrating-holi-covered-colorful-powder-creating-stunning-visual-spectacle-image-captures-energy-joy-367726543.jpg">
+        <h3>Holi Festival</h3>
+    </div>
+
+    <div class="card">
+        <img src="https://caleidoscope.in/wp-content/uploads/2020/01/Rangoli-Art-02.jpg">
+        <h3>Rangoli Art</h3>
+    </div>
+
+    <div class="card">
+        <img src="https://media.youthincmag.com/images/dbf8f787-a5ad-48bf-b664-43a6c4db2774/original.jpg">
+        <h3>Food Traditions</h3>
+    </div>
+
+    <div class="card">
+        <img src="https://i.pinimg.com/736x/af/b6/42/afb6428917780f1b8bc97e3bc7a54906.jpg">
+        <h3>Traditional Clothing</h3>
+    </div>
+
+    <div class="card">
+        <img src="https://htoindia.com/wp-content/uploads/2018/01/Indian-folk-and-tribal-dances-1.jpg">
+        <h3>Dance & Music</h3>
+    </div>
+
+    <div class="card">
+        <img src="https://i1.wp.com/zo3.in/wp-content/uploads/2018/07/Traditional-Values-of-India.jpg?fit=1000%2C563&ssl=1">
+        <h3>Religious Practices</h3>
+    </div>
+
+    <div class="card">
+        <img src="https://www.namasteindiatrip.com/blog/wp-content/uploads/2019/04/Village-Tourism.jpg">
+        <h3>Village Culture</h3>
+    </div>
+
+</div>
+
+<!-- TRADITIONS SECTION -->
+<h2 style="text-align:center;">Traditions of India</h2>
+<div class="grid">
+
+    <div class="tradition-card">
+        <img src="https://cdn.shopify.com/s/files/1/0869/4051/6536/files/10.png?v=1759220585">
+        <h3>Family Traditions</h3>
+        <p>India follows a strong family system where elders are respected and families live together.</p>
+    </div>
+
+    <div class="tradition-card">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibdrPDyuABzg4xXbJ0nD8FFfJo54RkRKHcaQ303E72klwNQjYzB7eSUOhdSxJiKrWYuo1i2giBL0yugFtAXoEPnoM4mr3WKyBVONZsS52AiWHm0qBWGggZO3BQNalaKOobAl2qBzUICt65/s1600/festivals-of-india.jpg">
+        <h3>Festival Traditions</h3>
+        <p>Festivals like Diwali, Holi, and Eid are celebrated with joy and unity.</p>
+    </div>
+
+    <div class="tradition-card">
+        <img src="https://english.cdn.zeenews.com/sites/default/files/2023/04/20/1186963-whatsapp-image-2023-04-20-at-4.32.05-pm.jpeg?im=Resize=(1200,900)">
+        <h3>Traditional Clothing</h3>
+        <p>Clothing like sarees, kurtas, and dhotis represent Indian culture.</p>
+    </div>
+
+    <div class="tradition-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRvyzu3z4Vy0NqcvBF9FLT954KRtnVdquRJA&s">
+        <h3>Yoga & Spirituality</h3>
+        <p>Yoga and meditation are ancient traditions for physical and mental well-being.</p>
+    </div>
+
+    <div class="tradition-card">
+        <img src="https://blog.matrimilan.com/wp-content/uploads/2024/02/image-14.png">
+        <h3>Rituals & Customs</h3>
+        <p>Lighting diyas, पूजा, and ceremonies are important in daily life.</p>
+    </div>
+
+</div>
+
+<!-- DARK MODE -->
+<button onclick="toggleDark()" style="margin:20px;"> Dark Mode</button>
+
+<script>
+
+// HERO SLIDER
+let slides=document.querySelectorAll('.hero img');
+let index=0;
+
+setInterval(()=>{
+    slides[index].classList.remove('active');
+    index=(index+1)%slides.length;
+    slides[index].classList.add('active');
+},3000);
+
+// SEARCH
+function searchItems(){
+    let input=document.getElementById('search').value.toLowerCase();
+    let cards=document.querySelectorAll('.tradition-card');
+
+    cards.forEach(card=>{
+        let text=card.innerText.toLowerCase();
+        card.style.display=text.includes(input)?"block":"none";
+    });
+}
+
+// DARK MODE
+function toggleDark(){
+    document.body.classList.toggle('dark');
+}
+
+// SCROLL BUTTON (FIXED POSITION)
+function scrollToSection(){
+    document.querySelector('.grid').scrollIntoView({behavior:'smooth'});
+}
+
+</script>
+
+</body>
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h2>🇮🇳 Cultural Heritage</h2>
+      <p>Exploring the rich traditions, festivals, monuments, and culture of India.</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <ul>
+        <li>Home</li>
+        <li>Festivals</li>
+        <li>Monuments</li>
+        <li>Traditions</li>
+      </ul>
+    </div>
+
+    <div class="footer-box">
+      <h3>Explore</h3>
+      <ul>
+        <li>Dance & Music</li>
+        <li>Yoga & Spirituality</li>
+        <li>Food Culture</li>
+        <li>Village Life</li>
+      </ul>
+    </div>
+
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <p>Email: indiaheritage@gmail.com</p>
+      <p>Made with ❤️ in India</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Cultural Heritage of India | All Rights Reserved</p>
+  </div>
+
+</footer>
+</html>

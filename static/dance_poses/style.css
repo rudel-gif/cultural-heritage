@@ -1,0 +1,75 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+    background: #f4f4f4;
+}
+
+/* Navbar */
+
+.navbar{
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Buttons */
+
+.nav-buttons button{
+    padding: 8px 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nav-buttons button:hover{
+    background-color: #e65c00;
+}
+
+/* Scroll Container */
+
+.scroll-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card */
+
+.card{
+    width: 260px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+    transition: transform 0.3s;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+/* Images */
+
+.card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Links */
+
+a{
+    text-decoration: none;
+    color: black;
+}
