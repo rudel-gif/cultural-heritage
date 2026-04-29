@@ -3,198 +3,241 @@
 <head>
 <title>Classical Dances of India</title>
 
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 
 body{
-font-family:Arial;
-margin:0;
-background:#f5f5f5;
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:#f5f5f5;
 }
 
+/* HEADER */
 header{
-background:#d3cfcd;
-color:rgb(38, 36, 36);
-text-align:center;
-padding:25px;
+    background: linear-gradient(135deg,#f47b56,#ff9800);
+    color:white;
+    text-align:left;
+    padding:40px 20px;
+    position: relative;
 }
 
+header h1{
+    margin:0;
+    font-size:42px;
+    font-family:'Playfair Display', serif;
+}
+
+/* CONTAINER */
 .container{
-width:90%;
-margin:auto;
-padding:20px;
+    width:90%;
+    margin:auto;
+    padding:20px;
 }
 
+/* SEARCH */
+.search-box{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.search-box input{
+    width:50%;
+    padding:12px 20px;
+    border-radius:30px;
+    border:none;
+    outline:none;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    font-size:16px;
+    transition:0.3s;
+}
+
+.search-box input:focus{
+    width:60%;
+    border:2px solid #f87148;
+}
+
+/* GRID */
 .grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
+/* CARD */
 .card{
-background:white;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
-cursor:pointer;
-transition:0.3s;
+    position:relative;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,0.2);
+    transition:0.4s;
 }
 
 .card:hover{
-transform:scale(1.05);
+    transform:translateY(-10px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.4);
 }
 
-.card img {
-    width: 100%;
-    height: 200px;        /* fixed box height */
-    object-fit: contain;  /* shows full image */
-    background-color: #f5f5f5; /* optional: fills empty space */
+/* IMAGE FIX */
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    transition:0.4s;
 }
+
+/* ZOOM EFFECT */
+.card:hover img{
+    transform:scale(1.1);
+}
+
+/* TITLE */
 .card h3{
-text-align:center;
-padding:10px;
-color:#dea47e;
+    text-align:center;
+    padding:12px;
+    color:#ff5722;
 }
 
-.details{
-display:none;
-background:white;
-padding:30px;
-margin-top:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
+/* OVERLAY */
+.card::after{
+    content:"Click to Explore";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+     pointer-events: none;
+    transition:0.3s;
+    font-size:18px;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-margin-top:20px;
+.card:hover::after{
+    opacity:1;
 }
 
-.gallery img{
-width:100%;
-border-radius:6px;
+/* LINK REMOVE STYLE */
+.card a{
+    text-decoration:none;
+    color:inherit;
 }
 
-button{
-margin-top:20px;
-padding:10px 20px;
-background:#ff6600;
-color:white;
-border:none;
-cursor:pointer;
+.back-btn{
+    position:absolute;
+    top:25px;
+    right:35px;
+    padding:10px 20px;
+    background-color:#ff6600;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
 }
 
-
-    .navbar{
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.back-btn:hover{
+    background-color: #cc5200;
 }
-
-.navbar h2{
-    color: white;
-    margin: 0;
-}
-
-.nav-buttons a{
-    text-decoration: none;
-}
-
-.nav-buttons button{
-    padding: 8px 15px;
-    margin-left: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color:orange;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.nav-buttons button:hover{
-    background-color: #e65c00;
-} 
 </style>
 </head>
 
 <body>
 
-<div class="navbar">
-<h1>Classical Dance of India</h1>
-<div class="nav-buttons">
-    <a href="/index">
-        <button>Back to Home Page</button>
-    </a>
-</div>
-</div>
+<header>
+<h1>Classical Dances of India</h1>
+<a href="/home" class="back-btn">Back</a>
+<p>Explore the rich cultural heritage through dance</p>
+</header>
+
 <div class="container">
 
-<div class="grid">
-<a href="/bharatnatyam" style="text-decoration:none;">
-<div class="card">
+<!-- SEARCH -->
+<div class="search-box">
+<input type="text" placeholder="🔍 Search dance..." onkeyup="searchDance(this.value)">
+</div>
+
+<!-- GRID -->
+<div class="grid" id="danceGrid">
+
+<div class="card" data-name="bharatanatyam">
+<a href="/bharatnatyam">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Bharata_Natyam_Performance_DS.jpg/960px-Bharata_Natyam_Performance_DS.jpg">
 <h3>Bharatanatyam</h3>
-</div>
 </a>
+</div>
 
-<a href="/kathak" style="text-decoration:none;">
-<div class="card">
+<div class="card" data-name="kathak">
+<a href="/kathak">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Kathak_3511900193_986f6440f6_b_retouched.jpg/250px-Kathak_3511900193_986f6440f6_b_retouched.jpg">
 <h3>Kathak</h3>
-</div>
 </a>
+</div>
 
-<a href="kathakali.html" style="text-decoration:none;">
-<div class="card">
+<div class="card" data-name="kathakali">
+<a href="/kathakali">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Kathakali_BNC.jpg/250px-Kathakali_BNC.jpg">
 <h3>Kathakali</h3>
-</div>
 </a>
+</div>
 
-<a href="kuchipudi.html" style="text-decoration:none;">
-<div class="card">
+<div class="card" data-name="kuchipudi">
+<a href="/kuchipudi">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Kuchipudi_Performer_DS.jpg/250px-Kuchipudi_Performer_DS.jpg">
 <h3>Kuchipudi</h3>
-</div>
 </a>
+</div>
 
-<a href="manipuri.html" style="text-decoration:none;">
-  <div class="card">
+<div class="card" data-name="manipuri">
+<a href="/manipuri">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Rasa_Lila_in_Manipuri_dance_style.jpg/250px-Rasa_Lila_in_Manipuri_dance_style.jpg">
 <h3>Manipuri</h3>
-</div>
 </a>
+</div>
 
-<a href="mohiniyattam.html" style="text-decoration:none;">
-<div class="card">
+<div class="card" data-name="mohiniyattam">
+<a href="/mohiniyattam">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Mohiniyattom_performance.jpg/250px-Mohiniyattom_performance.jpg">
 <h3>Mohiniyattam</h3>
-</div>
 </a>
+</div>
 
-<a href="odissi.html" style="text-decoration:none;">
-<div class="card">
+<div class="card" data-name="odissi">
+<a href="/odissi">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Odissi_Performance_DS.jpg/250px-Odissi_Performance_DS.jpg">
 <h3>Odissi</h3>
-</div>
 </a>
+</div>
 
-<a href="sattriya.html" style="text-decoration:none;">
-<div class="card">
+<div class="card" data-name="sattriya">
+<a href="sattriya.html">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Sattriya_dance_of_India_by_Shagil_Kannur_4.jpg/250px-Sattriya_dance_of_India_by_Shagil_Kannur_4.jpg">
 <h3>Sattriya</h3>
-</div>
 </a>
+</div>
 
 </div>
 
-
-<div id="danceDetails" class="details"></div>
-
 </div>
 
+<script>
+
+/* SEARCH FUNCTION */
+function searchDance(value){
+    let cards=document.querySelectorAll(".card");
+    value=value.toLowerCase();
+
+    cards.forEach(card=>{
+        let name=card.getAttribute("data-name");
+        card.style.display=name.includes(value)?"block":"none";
+    });
+}
+</script>
+<a href="/index" class="back-btn">Back</a>
 </body>
-<footer style="padding: 1cm;"> </footer>
 </html>
