@@ -57,6 +57,19 @@ h2{
     object-fit: cover; /* keeps image nice without stretching */
     border-radius: 10px; /* optional for design */
 }
+.back-btn{
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 18px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.back-btn:hover{
+    background-color: #cc5200;
+}
 </style>
 
 </head>
@@ -65,8 +78,7 @@ h2{
 
 <h1 class="title">Kathak – Classical Dance</h1>
 
-<img src="dance_poses/kathakm.jpg" class="dance-img">
-
+<img src="{{ url_for('static', filename='dance_poses/kathakm.jpg') }}" class="dance-img">
 <p>
 Kathak is one of the major classical dance forms of India, originating from North India. 
 The name Kathak comes from the word "Katha", meaning story, and the dancers are known as storytellers.
@@ -99,13 +111,16 @@ Later, it developed in royal courts, especially during the Mughal period, gainin
 
 <div class="gallery">
 
-<img src="dance_poses/kathak1.jpg">
-<img src="dance_poses/kathak2.jpg">
-<img src="dance_poses/kathak3.jpg">
-<img src="dance_poses/kathak4.jpg">
+<div class="gallery">
+
+<img src="{{ url_for('static', filename='dance_poses/kathak1.jpg') }}">
+<img src="{{ url_for('static', filename='dance_poses/kathak2.jpg') }}">
+<img src="{{ url_for('static', filename='dance_poses/kathak3.jpg') }}">
+<img src="{{ url_for('static', filename='dance_poses/kathak4.jpg') }}">
 
 </div>
-
+</div>
+<a href="/classicaldance" class="back-btn">Back</a>
 </body>
 <footer style="padding: 1cm;"> </footer>
 </html>

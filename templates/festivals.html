@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Festivals of India</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body{
+    margin:0;
+    padding:0;
+    font-family:'Poppins',sans-serif;
+    background:#f5efe3;
+}
+
+/* HEADER */
+.navbar{
+    background:#4b1d35;
+    color:white;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.navbar h1{
+    margin:0;
+    font-size:32px;
+}
+
+.nav-buttons button{
+    padding:10px 18px;
+    border:none;
+    border-radius:8px;
+    background:#d4a017;
+    color:white;
+    cursor:pointer;
+    font-weight:500;
+}
+
+.nav-buttons button:hover{
+    background:#b88900;
+}
+
+/* PAGE TITLE */
+.top-text{
+    text-align:center;
+    padding:30px 20px;
+}
+
+.top-text h2{
+    font-size:36px;
+    color:#4b1d35;
+    margin-bottom:8px;
+}
+
+.top-text p{
+    color:#666;
+    font-size:15px;
+}
+
+/* STRIP CONTAINER */
+.container{
+    width:100%;
+    margin-top:30px;
+}
+
+.card{
+    position:relative;
+    width:78%;
+    height:380px;
+    margin:0 auto 32px auto;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 8px 18px rgba(0,0,0,0.10);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:scale(1.01);
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(90%);
+}
+
+.card h3{
+    position:absolute;
+    top:70%;
+    left:20%;
+    transform:translate(-50%,-50%);
+    color:white;
+    font-size:38px;
+    font-weight:600;
+    margin:0;
+}
+
+.card p{
+    position:absolute;
+    bottom:20px;
+    left:30px;
+    color:#f3f3f3;
+    font-size:15px;
+    text-align:left;
+}
+
+a{
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <h1>Festivals of India</h1>
+    <div class="nav-buttons">
+        <a href="/index"><button>Back to Home</button></a>
+    </div>
+</div>
+
+<div class="top-text">
+    <h2>Journey Through Indian Celebrations</h2>
+    <p>Discover the festivals that bring together devotion, color, music and joy.</p>
+</div>
+
+<div class="container">
+
+    <a href="/diwali">
+        <div class="card">
+            <img src="https://png.pngtree.com/background/20250602/original/pngtree-happy-diwali-glowing-diya-festival-of-lights-picture-image_16606736.jpg">
+            <h3>Diwali</h3>
+            <p>The festival of lights symbolizing victory of good over evil.</p>
+        </div>
+    </a>
+
+    <a href="/holi">
+        <div class="card">
+            <img src="https://img.freepik.com/premium-photo/photo-bowl-with-holi-powder-left-side-purple-background-right-lower-corner-copy-space-text-yellow-blue-colors_1256366-3218.jpg">
+            <h3>Holi</h3>
+            <p>The vibrant celebration of colors, love and spring.</p>
+        </div>
+    </a>
+
+    <a href="/dussehra">
+        <div class="card">
+            <img src="https://img.freepik.com/premium-photo/indian-festival-dussehra-showing-golden-leaf-grey-background-greeting-card_136354-362.jpg">
+            <h3>Dussehra</h3>
+            <p>Celebrating the triumph of righteousness and truth.</p>
+        </div>
+    </a>
+
+    <a href="/navratri">
+        <div class="card">
+            <img src="https://img.pikbest.com/back_our/bg/20200824/bg/bc7043ba11d94_397098.jpg!w700wp">
+            <h3>Navratri</h3>
+            <p>Nine nights of devotion, dance and divine feminine power.</p>
+        </div>
+    </a>
+
+    <a href="/chaturthi">
+        <div class="card">
+            <img src="https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-93882099/93882099.jpg">
+            <h3>Ganesh Chaturthi</h3>
+            <p>Welcoming Lord Ganesha with grandeur and devotion.</p>
+        </div>
+    </a>
+
+    <a href="/janmashtami">
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/e9/cc/c6/e9ccc651789c38ef652cb4ebd6f709cc.jpg">
+            <h3>Janmashtami</h3>
+            <p>The divine birth celebration of Lord Krishna.</p>
+        </div>
+    </a>
+
+    <a href="/raksha">
+        <div class="card">
+            <img src="https://thumbs.dreamstime.com/b/rakshabandhan-rakhi-indian-festival-celebrating-brothers-sisters-bond-252180439.jpg">
+            <h3>Raksha Bandhan</h3>
+            <p>A sacred bond of love between brothers and sisters.</p>
+        </div>
+    </a>
+
+    <a href="/pongal">
+        <div class="card">
+            <img src="https://t4.ftcdn.net/jpg/17/20/95/27/360_F_1720952761_kz1kRK03npaxmOzl4wU8RY0Sgj3DwFOO.jpg">
+            <h3>Pongal</h3>
+            <p>South India's thanksgiving harvest celebration.</p>
+        </div>
+    </a>
+
+    <a href="/sankranti">
+        <div class="card">
+            <img src="https://png.pngtree.com/background/20250103/original/pngtree-makar-sankranti-kites-background-picture-image_15126918.jpg">
+            <h3>Makar Sankranti</h3>
+            <p>A harvest festival marked with kites, sweets and sunlight.</p>
+        </div>
+    </a>
+
+</div>
+
+</body>
+</html>
