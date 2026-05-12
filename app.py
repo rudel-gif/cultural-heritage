@@ -1,3 +1,5 @@
+from flask import jsonify
+import requests
 from flask import Flask, request, redirect, render_template, session
 import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -17,7 +19,6 @@ db = mysql.connector.connect(
 @app.route("/")
 def landing():
     return render_template("home.html")
-
 
 # Register
 @app.route("/register", methods=["GET", "POST"])
@@ -72,10 +73,10 @@ def login():
 
 
 # Logout
-@app.route("/logout")
-def logout():
-    session.pop("username", None)
-    return redirect("/")
+#@app.route("/logout")
+#def logout():
+ #   session.pop("username", None)
+ #   return redirect("/")
 
 
 @app.route("/index")
@@ -162,6 +163,14 @@ def north():
 def south():
     return render_template("south.html")
 
+@app.route("/street")
+def street():
+    return render_template("street.html")
+
+@app.route("/sweet")
+def sweet():
+    return render_template("sweet.html")
+
 @app.route("/kathak")
 def kathak():
     return render_template("kathak.html")
@@ -193,6 +202,10 @@ def kathakali():
 @app.route("/home")
 def home():
     return render_template("home.html")
+
+@app.route("/folk")
+def folk():
+    return render_template("folk.html")
 
 @app.route("/about")
 def about():
