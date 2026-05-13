@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Folk Music of India</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f5f5f5;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(to right,#ff9933,#ffffff,#138808);
+    padding:20px;
+    text-align:center;
+    color:#000;
+}
+
+header h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:18px;
+}
+
+.video-banner{
+    position:relative;
+    width:100%;
+    height:500px;
+    overflow:hidden;
+}
+
+.video-banner video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.video-overlay{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:white;
+    background:rgba(0,0,0,0.4);
+    padding:20px 40px;
+    border-radius:10px;
+}
+
+.video-overlay h2{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.video-overlay p{
+    font-size:20px;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:40px 0;
+}
+
+.section-title{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:30px;
+    color:#d35400;
+}
+
+.music-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    margin-bottom:10px;
+    color:#138808;
+}
+
+.card-content p{
+    line-height:1.6;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+button{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    background:#ff9933;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#e67e22;
+}
+
+.video-banner{
+    width:100%;
+    height:600px;
+    overflow:hidden;
+}
+
+.video-banner iframe{
+    width:100%;
+    height:100%;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Folk Music of India</h1>
+    <p>Exploring the Traditional Musical Heritage of India</p>
+</header>
+
+<div class="video-banner">
+    <iframe
+        width="100%"
+        height="500"
+        src="https://www.youtube.com/embed/5HfCIy6W6lc"
+        title="Folk Music of India"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+    </iframe>
+</div>
+<div class="container">
+    <h2 class="section-title">Popular Folk Music Styles</h2>
+
+    <div class="music-grid">
+
+        <div class="card">
+            <img src="https://punjabtourismguide.wordpress.com/wp-content/uploads/2015/04/d8.jpg" alt="Bhangra">
+            <div class="card-content">
+                <h3>Punjab Folk Music</h3>
+                <button onclick="showMessage('Bhangra music represents the joyful spirit of Punjab!')">
+                    Learn More
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyrgepV7WhwVlU2091m__MInKAUJh8iEfpzA&s" alt="Baul">
+            <div class="card-content">
+                <h3>West Bengal Folk Music</h3>
+                <button onclick="showMessage('Baul music is deeply connected to spirituality and simplicity.')">
+                    Learn More
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://www.maharashtratourism.net/images/folk-music-maharashtra.jpg" alt="Lavani">
+            <div class="card-content">
+                <h3>Maharashtra Folk Music</h3>
+                <button onclick="showMessage('Lavani combines music, dance, and storytelling beautifully!')">
+                    Learn More
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw2PSx7htN79yJnyyCak9WEBJU_3Cmp6NKCQ&s" alt="Rajasthani Folk">
+            <div class="card-content">
+                <h3>Rajasthani Folk Music</h3>
+                <button onclick="showMessage('Rajasthani folk music reflects desert culture and royal traditions.')">
+                    Learn More
+                </button>
+            </div>
+        </div>
+        <div class="card">
+    <img src="https://assets.isu.pub/document-structure/230518085159-71d0a69125ef16925bad50e980f18783/v1/ab161037639f2f5c4c22ab877016d650.jpeg" alt="Bihu">
+    <div class="card-content">
+        <h3>Assam Folk Music</h3>
+        <button onclick="showMessage('Bihu music celebrates the harvest season of Assam!')">
+            Learn More
+        </button>
+    </div>
+</div>
+
+<div class="card">
+    <img src="https://www.gujaratexpert.com/blog/wp-content/uploads/2019/01/Gujarat-Music.jpg" alt="Garba Music">
+    <div class="card-content">
+        <h3>Gujarat Folk Music</h3>
+        <button onclick="showMessage('Garba songs bring people together in celebration and dance!')">
+            Learn More
+        </button>
+    </div>
+</div>
+
+<div class="card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-yPOQYRG56lx5dVyhvhTJCVkxDZ_7gTHjwQ&s" alt="Kajri">
+    <div class="card-content">
+        <h3>Uttar Pradesh Folk Music</h3>
+        <button>
+            Learn More
+        </button>
+    </div>
+</div>
+
+<div class="card">
+    <img src="https://www.incrediblegoa.org/wp-content/uploads/2023/06/Music-of-Goa.jpeg" alt="Mando">
+    <div class="card-content">
+        <h3>Goa Folk Music</h3>
+        <button>
+            Learn More
+        </button>
+    </div>
+</div>
+
+<div class="card">
+    <img src="https://static.wixstatic.com/media/4823b3_9e49d68c993343b8b6587a5006867867~mv2.jpg/v1/fill/w_568,h_378,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4823b3_9e49d68c993343b8b6587a5006867867~mv2.jpg" alt="Sufi Folk">
+    <div class="card-content">
+        <h3>Kashmir Folk Music</h3>
+        <button>
+            Learn More
+        </button>
+    </div>
+</div>
+
+<div class="card">
+    <img src="https://cdn-cms.orchidsinternationalschool.com/blog/Tamilnadu%20Folk%20Songs.jpg" alt="Naatupura Paatu">
+    <div class="card-content">
+        <h3>Tamil Nadu Folk Music</h3>
+        <button>
+            Learn More
+        </button>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Folk Music of India | Designed with ❤️</p>
+</footer>
+
+<script>
+function showMessage(message){
+    alert(message);
+}
+</script>
+
+</body>
+</html>

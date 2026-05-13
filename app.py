@@ -1,7 +1,11 @@
-from flask import Flask, request, redirect, render_template
+from flask import jsonify
+import requests
+from flask import Flask, request, redirect, render_template, session
 import mysql.connector
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
+app.secret_key = "culturalheritage_secret"
 
 # MySQL Connection
 db = mysql.connector.connect(
@@ -11,16 +15,12 @@ db = mysql.connector.connect(
     database="cultural_heritage"
 )
 
-cursor = db.cursor()
-
-# Home Page
+# Landing Page
 @app.route("/")
-def home():
-    return render_template("index.html")
-
+def landing():
+    return render_template("home.html")
 
 # Register
-# Show Register Page (GET)
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -29,39 +29,64 @@ def register():
         username = request.form["username"]
         password = request.form["password"]
 
-        sql = "INSERT INTO users (full_name, email, username, password) VALUES (%s, %s, %s, %s)"
-        values = (full_name, email, username, password)
+        hashed_password = generate_password_hash(password)
 
-        cursor.execute(sql, values)
-        db.commit()
+        try:
+            cursor = db.cursor()
+            sql = "INSERT INTO users (full_name, email, username, password) VALUES (%s, %s, %s, %s)"
+            values = (full_name, email, username, hashed_password)
 
-        return redirect("/index")
+            cursor.execute(sql, values)
+            db.commit()
+
+            return redirect("/login")
+        except:
+            return "Registration Failed! Username may already exist."
 
     return render_template("register.html")
 
 
 # Login
-# Show Login Page (GET) and Handle Login (POST)
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
 
-        sql = "SELECT * FROM users WHERE username=%s AND password=%s"
-        values = (username, password)
-
-        cursor.execute(sql, values)
+        cursor = db.cursor()
+        sql = "SELECT password FROM users WHERE username=%s"
+        cursor.execute(sql, (username,))
         user = cursor.fetchone()
 
         if user:
-            return redirect("/index")
+            stored_password = user[0]
+
+            if check_password_hash(stored_password, password):
+                session["username"] = username
+                return redirect("/index")
+            else:
+                return "Invalid Username or Password"
         else:
-            return "Invalid Username or Password"
+            return "User not found"
 
     return render_template("login.html")
 
 
+# Logout
+#@app.route("/logout")
+#def logout():
+ #   session.pop("username", None)
+ #   return redirect("/")
+
+
+@app.route("/index")
+def index():
+    if "username" in session:
+        return render_template("index.html")
+    return redirect("/login")
+
+
+# Static Heritage Pages
 @app.route("/festivals")
 def festivals():
     return render_template("festivals.html")
@@ -122,10 +147,6 @@ def sankranti():
 def chaturthi():
     return render_template("chaturthi.html")
 
-@app.route("/index")
-def index():
-    return render_template("index.html")
-
 @app.route("/west")
 def west():
     return render_template("west.html")
@@ -142,6 +163,14 @@ def north():
 def south():
     return render_template("south.html")
 
+@app.route("/street")
+def street():
+    return render_template("street.html")
+
+@app.route("/sweet")
+def sweet():
+    return render_template("sweet.html")
+
 @app.route("/kathak")
 def kathak():
     return render_template("kathak.html")
@@ -149,6 +178,38 @@ def kathak():
 @app.route("/bharatnatyam")
 def bharatnatyam():
     return render_template("bharatnatyam.html")
+
+@app.route("/manipuri")
+def manipuri():
+    return render_template("manipuri.html")
+
+@app.route("/mohiniyattam")
+def mohiniyattam():
+    return render_template("mohiniyattam.html")
+
+@app.route("/odissi")
+def odissi():
+    return render_template("odissi.html")
+
+@app.route("/kuchipudi")
+def kuchipudi():
+    return render_template("kuchipudi.html")
+
+@app.route("/kathakali")
+def kathakali():
+    return render_template("kathakali.html")
+
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+@app.route("/folk")
+def folk():
+    return render_template("folk.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

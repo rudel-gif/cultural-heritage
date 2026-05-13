@@ -260,6 +260,7 @@ body{
     font-size:14px;
     color:#aaa;
 }
+
 </style>
 </head>
 
@@ -271,11 +272,11 @@ body{
   </div>
 
   <nav class="nav">
-    <a href="home.html">Home</a>
-    <a href="about.html">About Us</a>
+    <a href="/home">Home</a>
+    <a href="/about">About Us</a>
 
-    <a href="login.html" class="btn">Login</a>
-    <a href="register.html" class="btn">Register</a>
+    <a href="/login" class="btn">Login</a>
+    <a href="/register" class="btn">Register</a>
   </nav>
 
 </header>
@@ -424,9 +425,7 @@ function toggleDark(){
 function scrollToSection(){
     document.querySelector('.grid').scrollIntoView({behavior:'smooth'});
 }
-
 </script>
-
 </body>
 <!-- FOOTER -->
 <footer class="footer">
@@ -435,7 +434,10 @@ function scrollToSection(){
 
     <div class="footer-box">
       <h2>🇮🇳 Cultural Heritage</h2>
-      <p>Exploring the rich traditions, festivals, monuments, and culture of India.</p>
+      <p>
+        Exploring the rich traditions, festivals,
+        monuments, and culture of India.
+      </p>
     </div>
 
     <div class="footer-box">
@@ -471,4 +473,6 @@ function scrollToSection(){
   </div>
 
 </footer>
+
+</body>
 </html>
