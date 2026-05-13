@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Indian Culture Quiz</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial;
+    background:linear-gradient(135deg,#ffecd2,#fcb69f);
+    min-height:100vh;
+    padding:30px;
+}
+
+/* TITLE */
+
+.main-title{
+    text-align:center;
+    font-size:45px;
+    color:#6a0d45;
+    margin-bottom:40px;
+}
+
+/* =========================
+NEW INTERACTIVE TOPICS
+========================= */
+
+.topic-section{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:35px;
+    margin-top:40px;
+    margin-bottom:60px;
+}
+
+.topic-card{
+    position:relative;
+    width:260px;
+    height:320px;
+    border-radius:25px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.5s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* IMAGE */
+
+.topic-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+/* OVERLAY */
+
+.overlay{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:25px;
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,0.8)
+    );
+
+    color:white;
+}
+
+/* TITLE */
+
+.overlay h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+/* DESCRIPTION */
+
+.overlay p{
+    font-size:16px;
+    opacity:0.9;
+}
+
+/* HOVER EFFECT */
+
+.topic-card:hover{
+
+    transform:
+    translateY(-15px)
+    scale(1.04);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,0.35);
+
+}
+
+/* IMAGE ZOOM */
+
+.topic-card:hover img{
+    transform:scale(1.15);
+}
+
+/* GLOW EFFECT */
+
+.dance-card:hover{
+    box-shadow:0 0 35px #ff4081;
+}
+
+.festival-card:hover{
+    box-shadow:0 0 35px #ff9800;
+}
+
+.monument-card:hover{
+    box-shadow:0 0 35px #00bcd4;
+}
+
+.food-card:hover{
+    box-shadow:0 0 35px #8bc34a;
+}
+
+.music-card:hover{
+    box-shadow:0 0 35px #9c27b0;
+}
+
+/* FLOATING ANIMATION */
+
+.topic-card{
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+/* LEVEL SECTION */
+
+.level-section{
+    display:none;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-bottom:40px;
+}
+
+.level-btn{
+    padding:12px 20px;
+    border:none;
+    border-radius:30px;
+    background:#6a0d45;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.level-btn:hover{
+    background:#ff5722;
+}
+
+/* QUIZ CONTAINER */
+
+.quiz-container{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.2);
+    display:none;
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.level,
+.score,
+.timer,
+.progress{
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* PROGRESS BAR */
+
+.progress-bar{
+    width:100%;
+    height:15px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
+
+.progress-fill{
+    height:100%;
+    width:0%;
+    background:#ff5722;
+    transition:0.3s;
+}
+
+/* QUESTION */
+
+.question{
+    font-size:28px;
+    margin-bottom:30px;
+    font-weight:bold;
+}
+
+/* OPTIONS */
+
+.options{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.option-btn{
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:#f1f1f1;
+    cursor:pointer;
+    font-size:17px;
+    transition:0.3s;
+}
+
+.option-btn:hover{
+    background:#ffe0d1;
+}
+
+.correct{
+    background:#4caf50 !important;
+    color:white;
+}
+
+.wrong{
+    background:#f44336 !important;
+    color:white;
+}
+
+/* NEXT BUTTON */
+
+.next-btn{
+    margin-top:25px;
+    padding:14px 30px;
+    border:none;
+    border-radius:50px;
+    background:#ff5722;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    display:none;
+}
+
+.next-btn:hover{
+    background:#222;
+}
+
+/* RESULT */
+
+.result{
+    text-align:center;
+    margin-top:30px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+/* BADGE */
+
+.badge{
+    margin-top:20px;
+    font-size:24px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .main-title{
+        font-size:32px;
+    }
+
+    .topic-card{
+        width:150px;
+        height:150px;
+    }
+
+    .question{
+        font-size:22px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 class="main-title">
+🇮🇳 Indian Cultural Heritage Quiz
+</h1>
+
+<!-- INTERACTIVE TOPICS -->
+
+<div class="topic-section">
+
+    <!-- DANCE -->
+
+    <div class="topic-card dance-card"
+         onclick="selectTopic('dance')">
+
+        <img src="https://www.cheggindia.com/wp-content/uploads/2024/07/Folk-dances-of-India-1024x614.png">
+
+        <div class="overlay">
+            <h2>💃 Indian Dances</h2>
+            <p>Explore Classical & Folk Dances</p>
+        </div>
+
+    </div>
+
+    <!-- FESTIVALS -->
+
+    <div class="topic-card festival-card"
+         onclick="selectTopic('festival')">
+
+        <img src="https://www.namasteindiatrip.com/blog/wp-content/uploads/2022/11/Diwali-Festival.jpg">
+
+        <div class="overlay">
+            <h2>🪔 Festivals</h2>
+            <p>Celebrate Indian Traditions</p>
+        </div>
+
+    </div>
+
+    <!-- MONUMENTS -->
+
+    <div class="topic-card monument-card"
+         onclick="selectTopic('monument')">
+
+        <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523">
+
+        <div class="overlay">
+            <h2>🏰 Monuments</h2>
+            <p>Discover Heritage Sites</p>
+        </div>
+
+    </div>
+
+    <!-- FOOD -->
+
+    <div class="topic-card food-card"
+         onclick="selectTopic('food')">
+
+        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe">
+
+        <div class="overlay">
+            <h2>🍛 Food Culture</h2>
+            <p>Taste Indian Cuisine</p>
+        </div>
+
+    </div>
+
+    <!-- MUSIC -->
+
+    <div class="topic-card music-card"
+         onclick="selectTopic('music')">
+
+        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d">
+
+        <div class="overlay">
+            <h2>🎵 Music</h2>
+            <p>Indian Classical Music</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- LEVELS -->
+
+<div class="level-section" id="levelSection">
+
+</div>
+
+<!-- QUIZ -->
+
+<div class="quiz-container" id="quizContainer">
+
+    <div class="quiz-header">
+
+        <div class="level" id="levelText">
+            Level 1
+        </div>
+
+        <div class="score" id="scoreText">
+            Score: 0
+        </div>
+
+        <div class="timer" id="timer">
+            ⏳ 20s
+        </div>
+
+        <div class="progress" id="progressText">
+            Question 1/10
+        </div>
+
+    </div>
+
+    <!-- PROGRESS BAR -->
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- QUESTION -->
+
+    <div class="question" id="question">
+        Loading...
+    </div>
+
+    <!-- OPTIONS -->
+
+    <div class="options" id="options">
+
+    </div>
+
+    <!-- NEXT BUTTON -->
+
+    <button class="next-btn" id="nextBtn">
+        ➜ Next Question
+    </button>
+
+    <!-- RESULT -->
+
+    <div class="result" id="result"></div>
+
+    <div class="badge" id="badge"></div>
+
+</div>
+
+<script>
+
+/* =========================================
+QUESTIONS DATABASE
+========================================= */
+
+const questions = {
+
+dance:{
+
+1:[
+{
+question:"Which state is famous for Bharatanatyam?",
+options:["Punjab","Tamil Nadu","Kerala","Goa"],
+answer:"Tamil Nadu"
+},
+
+{
+question:"Kathak comes from?",
+options:["North India","Kerala","Goa","Assam"],
+answer:"North India"
+},
+
+{
+question:"Which dance is from Punjab?",
+options:["Bhangra","Kathak","Garba","Odissi"],
+answer:"Bhangra"
+},
+
+{
+question:"Which dance belongs to Kerala?",
+options:["Kathakali","Lavani","Garba","Ghoomar"],
+answer:"Kathakali"
+},
+
+{
+question:"Garba is famous in?",
+options:["Gujarat","Punjab","Kerala","Bihar"],
+answer:"Gujarat"
+},
+
+{
+question:"Odissi comes from?",
+options:["Odisha","Goa","Tamil Nadu","Delhi"],
+answer:"Odisha"
+},
+
+{
+question:"Lavani belongs to?",
+options:["Maharashtra","Punjab","Goa","Kerala"],
+answer:"Maharashtra"
+},
+
+{
+question:"Kuchipudi belongs to?",
+options:["Andhra Pradesh","Punjab","Goa","Bihar"],
+answer:"Andhra Pradesh"
+},
+
+{
+question:"Which dance uses masks?",
+options:["Kathakali","Bhangra","Garba","Lavani"],
+answer:"Kathakali"
+},
+
+{
+question:"Which dance is classical?",
+options:["Kathak","Hip Hop","Salsa","Jazz"],
+answer:"Kathak"
+}
+],
+
+2:[
+{
+question:"Sattriya dance belongs to?",
+options:["Assam","Punjab","Kerala","Goa"],
+answer:"Assam"
+},
+
+{
+question:"Mohiniyattam belongs to?",
+options:["Kerala","Goa","Delhi","Punjab"],
+answer:"Kerala"
+}
+]
+
+},
+
+festival:{
+
+1:[
+{
+question:"Festival of colors?",
+options:["Holi","Eid","Diwali","Christmas"],
+answer:"Holi"
+},
+
+{
+question:"Festival of lights?",
+options:["Diwali","Eid","Pongal","Baisakhi"],
+answer:"Diwali"
+},
+
+{
+question:"Eid is celebrated by?",
+options:["Muslims","Hindus","Christians","Sikhs"],
+answer:"Muslims"
+},
+
+{
+question:"Pongal belongs to?",
+options:["Tamil Nadu","Punjab","Kerala","Goa"],
+answer:"Tamil Nadu"
+},
+
+{
+question:"Onam belongs to?",
+options:["Kerala","Punjab","Delhi","Goa"],
+answer:"Kerala"
+},
+
+{
+question:"Baisakhi belongs to?",
+options:["Punjab","Goa","Kerala","Bihar"],
+answer:"Punjab"
+},
+
+{
+question:"Christmas celebrates birth of?",
+options:["Jesus","Krishna","Rama","Buddha"],
+answer:"Jesus"
+},
+
+{
+question:"Ganesh Chaturthi celebrates?",
+options:["Lord Ganesha","Krishna","Rama","Shiva"],
+answer:"Lord Ganesha"
+},
+
+{
+question:"Navratri lasts for?",
+options:["9 days","2 days","5 days","15 days"],
+answer:"9 days"
+},
+
+{
+question:"Raksha Bandhan celebrates?",
+options:["Sibling bond","Marriage","Harvest","Dance"],
+answer:"Sibling bond"
+}
+]
+
+},
+
+festival:{
+
+1:[
+{
+question:"Festival of colors?",
+options:["Holi","Eid","Diwali","Christmas"],
+answer:"Holi"
+},
+{
+question:"Festival of lights?",
+options:["Diwali","Eid","Pongal","Baisakhi"],
+answer:"Diwali"
+}
+],
+
+2:[
+{
+question:"Onam belongs to?",
+options:["Kerala","Punjab","Goa","Delhi"],
+answer:"Kerala"
+},
+{
+question:"Pongal is celebrated in?",
+options:["Tamil Nadu","Gujarat","Punjab","Bihar"],
+answer:"Tamil Nadu"
+}
+],
+
+3:[
+{
+question:"Baisakhi is mainly celebrated in?",
+options:["Punjab","Kerala","Goa","Odisha"],
+answer:"Punjab"
+},
+{
+question:"Ganesh Chaturthi celebrates?",
+options:["Lord Ganesha","Lord Rama","Lord Shiva","Krishna"],
+answer:"Lord Ganesha"
+}
+],
+
+4:[
+{
+question:"Raksha Bandhan celebrates?",
+options:["Sibling bond","Marriage","Harvest","Dance"],
+answer:"Sibling bond"
+},
+{
+question:"Navratri lasts for?",
+options:["9 days","5 days","2 days","15 days"],
+answer:"9 days"
+}
+],
+
+5:[
+{
+question:"Eid is celebrated by?",
+options:["Muslims","Hindus","Sikhs","Christians"],
+answer:"Muslims"
+},
+{
+question:"Christmas celebrates birth of?",
+options:["Jesus","Krishna","Buddha","Rama"],
+answer:"Jesus"
+}
+],
+
+6:[
+{
+question:"Which festival marks harvest season in Assam?",
+options:["Bihu","Onam","Pongal","Lohri"],
+answer:"Bihu"
+},
+{
+question:"Lohri is famous in?",
+options:["Punjab","Kerala","Goa","Bihar"],
+answer:"Punjab"
+}
+],
+
+7:[
+{
+question:"Which festival is dedicated to snakes?",
+options:["Nag Panchami","Holi","Diwali","Eid"],
+answer:"Nag Panchami"
+},
+{
+question:"Chhath Puja is famous in?",
+options:["Bihar","Goa","Kerala","Punjab"],
+answer:"Bihar"
+}
+],
+
+8:[
+{
+question:"Which festival celebrates Lord Krishna’s birth?",
+options:["Janmashtami","Ram Navami","Holi","Eid"],
+answer:"Janmashtami"
+},
+{
+question:"Ram Navami celebrates birth of?",
+options:["Lord Rama","Krishna","Shiva","Hanuman"],
+answer:"Lord Rama"
+}
+],
+
+9:[
+{
+question:"Which Sikh festival celebrates Khalsa formation?",
+options:["Vaisakhi","Onam","Pongal","Bihu"],
+answer:"Vaisakhi"
+},
+{
+question:"Which festival includes kite flying?",
+options:["Makar Sankranti","Diwali","Christmas","Holi"],
+answer:"Makar Sankranti"
+}
+],
+
+10:[
+{
+question:"Hornbill Festival belongs to?",
+options:["Nagaland","Assam","Punjab","Goa"],
+answer:"Nagaland"
+},
+{
+question:"Which festival is known as boat race festival?",
+options:["Onam","Holi","Lohri","Diwali"],
+answer:"Onam"
+}
+],
+
+11:[
+{
+question:"Thrissur Pooram is celebrated in?",
+options:["Kerala","Tamil Nadu","Goa","Punjab"],
+answer:"Kerala"
+},
+{
+question:"Losar festival belongs to?",
+options:["Ladakh","Punjab","Kerala","Goa"],
+answer:"Ladakh"
+}
+],
+
+12:[
+{
+question:"Which festival is celebrated by Parsis?",
+options:["Navroz","Eid","Holi","Baisakhi"],
+answer:"Navroz"
+},
+{
+question:"Saga Dawa festival belongs to?",
+options:["Sikkim","Goa","Punjab","Kerala"],
+answer:"Sikkim"
+}
+],
+
+13:[
+{
+question:"Wangala festival belongs to which tribe?",
+options:["Garo","Bodo","Santhal","Naga"],
+answer:"Garo"
+},
+{
+question:"Which festival worships Sun God?",
+options:["Chhath","Holi","Diwali","Onam"],
+answer:"Chhath"
+}
+],
+
+14:[
+{
+question:"Bathukamma festival belongs to?",
+options:["Telangana","Punjab","Kerala","Goa"],
+answer:"Telangana"
+},
+{
+question:"Which festival is famous in Manipur?",
+options:["Yaoshang","Bihu","Lohri","Onam"],
+answer:"Yaoshang"
+}
+],
+
+15:[
+{
+question:"Nuakhai festival is celebrated in?",
+options:["Odisha","Punjab","Goa","Kerala"],
+answer:"Odisha"
+},
+{
+question:"Chapchar Kut belongs to?",
+options:["Mizoram","Assam","Punjab","Goa"],
+answer:"Mizoram"
+}
+]
+
+},
+monument:{
+
+1:[
+{
+question:"Where is Taj Mahal located?",
+options:["Agra","Delhi","Mumbai","Jaipur"],
+answer:"Agra"
+},
+{
+question:"Who built the Taj Mahal?",
+options:["Shah Jahan","Akbar","Babur","Humayun"],
+answer:"Shah Jahan"
+}
+],
+
+2:[
+{
+question:"Red Fort is in?",
+options:["Delhi","Agra","Jaipur","Lucknow"],
+answer:"Delhi"
+},
+{
+question:"Gateway of India is in?",
+options:["Mumbai","Delhi","Goa","Chennai"],
+answer:"Mumbai"
+}
+],
+
+3:[
+{
+question:"Qutub Minar is located in?",
+options:["Delhi","Agra","Bhopal","Patna"],
+answer:"Delhi"
+},
+{
+question:"India Gate is in?",
+options:["Delhi","Mumbai","Goa","Kolkata"],
+answer:"Delhi"
+}
+],
+
+4:[
+{
+question:"Charminar is located in?",
+options:["Hyderabad","Delhi","Agra","Pune"],
+answer:"Hyderabad"
+},
+{
+question:"Hawa Mahal is in?",
+options:["Jaipur","Delhi","Agra","Goa"],
+answer:"Jaipur"
+}
+],
+
+5:[
+{
+question:"Konark Sun Temple is in?",
+options:["Odisha","Punjab","Kerala","Goa"],
+answer:"Odisha"
+},
+{
+question:"Golden Temple is in?",
+options:["Amritsar","Delhi","Goa","Patna"],
+answer:"Amritsar"
+}
+],
+
+6:[
+{
+question:"Ajanta caves are in?",
+options:["Maharashtra","Punjab","Goa","Kerala"],
+answer:"Maharashtra"
+},
+{
+question:"Ellora caves are famous for?",
+options:["Rock-cut architecture","Gardens","Mosques","Palaces"],
+answer:"Rock-cut architecture"
+}
+],
+
+7:[
+{
+question:"Sanchi Stupa belongs to which religion?",
+options:["Buddhism","Hinduism","Islam","Sikhism"],
+answer:"Buddhism"
+},
+{
+question:"Humayun Tomb is in?",
+options:["Delhi","Agra","Goa","Jaipur"],
+answer:"Delhi"
+}
+],
+
+8:[
+{
+question:"Which monument is called symbol of love?",
+options:["Taj Mahal","Red Fort","India Gate","Qutub Minar"],
+answer:"Taj Mahal"
+},
+{
+question:"Brihadeeswara Temple is in?",
+options:["Tamil Nadu","Punjab","Goa","Kerala"],
+answer:"Tamil Nadu"
+}
+],
+
+9:[
+{
+question:"Fatehpur Sikri was built by?",
+options:["Akbar","Babur","Humayun","Shah Jahan"],
+answer:"Akbar"
+},
+{
+question:"Meenakshi Temple is located in?",
+options:["Madurai","Delhi","Mumbai","Goa"],
+answer:"Madurai"
+}
+],
+
+10:[
+{
+question:"Which monument has Ashoka Pillar?",
+options:["Sarnath","Agra","Delhi","Goa"],
+answer:"Sarnath"
+},
+{
+question:"Victoria Memorial is in?",
+options:["Kolkata","Mumbai","Delhi","Goa"],
+answer:"Kolkata"
+}
+],
+
+11:[
+{
+question:"Gol Gumbaz is in?",
+options:["Karnataka","Kerala","Punjab","Delhi"],
+answer:"Karnataka"
+},
+{
+question:"Mahabalipuram is famous for?",
+options:["Stone temples","Forts","Mosques","Gardens"],
+answer:"Stone temples"
+}
+],
+
+12:[
+{
+question:"Which cave temples are UNESCO heritage sites?",
+options:["Ajanta","Red Fort","India Gate","Gateway"],
+answer:"Ajanta"
+},
+{
+question:"Jantar Mantar was built for?",
+options:["Astronomy","War","Dance","Education"],
+answer:"Astronomy"
+}
+],
+
+13:[
+{
+question:"Which monument is made of white marble?",
+options:["Taj Mahal","Red Fort","Qutub Minar","India Gate"],
+answer:"Taj Mahal"
+},
+{
+question:"Rani ki Vav is located in?",
+options:["Gujarat","Delhi","Punjab","Goa"],
+answer:"Gujarat"
+}
+],
+
+14:[
+{
+question:"Khajuraho temples are famous for?",
+options:["Sculptures","Gardens","Forts","Paintings"],
+answer:"Sculptures"
+},
+{
+question:"Which dynasty built Brihadeeswara Temple?",
+options:["Chola","Mughal","Maurya","Gupta"],
+answer:"Chola"
+}
+],
+
+15:[
+{
+question:"Nalanda University ruins are in?",
+options:["Bihar","Goa","Punjab","Kerala"],
+answer:"Bihar"
+},
+{
+question:"Which monument is known for Indo-Islamic architecture?",
+options:["Qutub Minar","Ajanta","Konark","Gateway"],
+answer:"Qutub Minar"
+}
+]
+
+},
+
+food:{
+1:[
+{
+question:"Which food is famous in Punjab?",
+options:["Makki di Roti","Dhokla","Idli","Fish Curry"],
+answer:"Makki di Roti"
+},
+{
+question:"Idli belongs to?",
+options:["South India","Punjab","Delhi","Goa"],
+answer:"South India"
+}
+],
+
+2:[
+{
+question:"Dhokla is famous in?",
+options:["Gujarat","Punjab","Kerala","Goa"],
+answer:"Gujarat"
+},
+{
+question:"Rasgulla belongs to?",
+options:["West Bengal","Punjab","Goa","Delhi"],
+answer:"West Bengal"
+}
+]
+},
+
+
+music:{
+1:[
+{
+question:"Which is a classical music form?",
+options:["Carnatic","Pop","Rock","Jazz"],
+answer:"Carnatic"
+},
+{
+question:"Tabla is a?",
+options:["Musical instrument","Dance","Festival","Food"],
+answer:"Musical instrument"
+}
+],
+
+2:[
+{
+question:"Sitar was played by?",
+options:["Ravi Shankar","A.R. Rahman","Lata","Kishore"],
+answer:"Ravi Shankar"
+},
+{
+question:"Bansuri is a?",
+options:["Flute","Drum","Dance","Song"],
+answer:"Flute"
+}
+]
+},
+
+};
+
+/* =========================================
+VARIABLES
+========================================= */
+
+let selectedTopic = "";
+let currentLevel = 1;
+let currentQuestion = 0;
+let score = 0;
+let selectedQuestions = [];
+let timer;
+let timeLeft = 20;
+
+/* =========================================
+SELECT TOPIC
+========================================= */
+
+function selectTopic(topic){
+
+    selectedTopic = topic;
+
+    document.getElementById("levelSection").style.display="flex";
+
+    createLevels();
+}
+
+/* =========================================
+CREATE LEVELS
+========================================= */
+
+function createLevels(){
+
+    let levelSection =
+    document.getElementById("levelSection");
+
+    levelSection.innerHTML="";
+
+    for(let i=1;i<=15;i++){
+
+        let btn =
+        document.createElement("button");
+
+        btn.innerHTML =
+        "Level " + i;
+
+        btn.classList.add("level-btn");
+
+        btn.onclick = () => startQuiz(i);
+
+        levelSection.appendChild(btn);
+    }
+}
+
+/* =========================================
+START QUIZ
+========================================= */
+
+function startQuiz(level){
+
+    currentLevel = level;
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    document.getElementById("quizContainer")
+    .style.display="block";
+
+    document.getElementById("result")
+    .innerHTML="";
+
+    document.getElementById("badge")
+    .innerHTML="";
+
+    document.getElementById("scoreText")
+    .innerHTML="Score: 0";
+
+    // QUESTIONS
+
+    let levelQuestions =
+    questions[selectedTopic][level];
+
+    // RANDOM QUESTIONS
+
+    levelQuestions.sort(() =>
+    Math.random() - 0.5);
+
+    // TAKE 10 QUESTIONS
+
+   if(levelQuestions){
+    selectedQuestions =
+    levelQuestions.slice(0,10);
+   }else{
+    alert("Questions not added for this level yet!");
+    return;
+    }
+
+    loadQuestion();
+}
+
+/* =========================================
+LOAD QUESTION
+========================================= */
+
+function loadQuestion(){
+
+    clearInterval(timer);
+
+    timeLeft = 20;
+
+    startTimer();
+
+    let q =
+    selectedQuestions[currentQuestion];
+
+    document.getElementById("question")
+    .innerHTML = q.question;
+
+    document.getElementById("levelText")
+    .innerHTML = "Level " + currentLevel;
+
+    document.getElementById("progressText")
+    .innerHTML =
+    `Question ${currentQuestion+1}/10`;
+
+    document.getElementById("progressFill")
+    .style.width =
+    ((currentQuestion+1)/10)*100 + "%";
+
+    let optionsDiv =
+    document.getElementById("options");
+
+    optionsDiv.innerHTML="";
+
+    // RANDOMIZE OPTIONS
+
+    q.options.sort(() =>
+    Math.random() - 0.5);
+
+    q.options.forEach(option => {
+
+        let btn =
+        document.createElement("button");
+
+        btn.innerHTML = option;
+
+        btn.classList.add("option-btn");
+
+        btn.onclick = () =>
+        checkAnswer(btn, option);
+
+        optionsDiv.appendChild(btn);
+
+    });
+
+    document.getElementById("nextBtn")
+    .style.display="none";
+}
+
+/* =========================================
+CHECK ANSWER
+========================================= */
+
+function checkAnswer(button, selected){
+
+    clearInterval(timer);
+
+    let q =
+    selectedQuestions[currentQuestion];
+
+    let buttons =
+    document.querySelectorAll(".option-btn");
+
+    buttons.forEach(btn => {
+
+        btn.disabled = true;
+
+        if(btn.innerHTML === q.answer){
+
+            btn.classList.add("correct");
+        }
+
+    });
+
+    if(selected === q.answer){
+
+        score++;
+
+        document.getElementById("scoreText")
+        .innerHTML = "Score: " + score;
+
+    }else{
+
+        button.classList.add("wrong");
+
+    }
+
+    document.getElementById("nextBtn")
+    .style.display="inline-block";
+}
+
+/* =========================================
+NEXT QUESTION
+========================================= */
+
+document.getElementById("nextBtn")
+.addEventListener("click", ()=>{
+
+    currentQuestion++;
+
+    if(currentQuestion < 10){
+
+        loadQuestion();
+
+    }else{
+
+        showResult();
+
+    }
+
+});
+
+/* =========================================
+TIMER
+========================================= */
+
+function startTimer(){
+
+    document.getElementById("timer")
+    .innerHTML = `⏳ ${timeLeft}s`;
+
+    timer = setInterval(()=>{
+
+        timeLeft--;
+
+        document.getElementById("timer")
+        .innerHTML = `⏳ ${timeLeft}s`;
+
+        if(timeLeft <= 0){
+
+            clearInterval(timer);
+
+            document.getElementById("nextBtn")
+            .style.display="inline-block";
+
+        }
+
+    },1000);
+}
+
+/* =========================================
+FINAL RESULT
+========================================= */
+
+function showResult(){
+
+    document.getElementById("question")
+    .innerHTML =
+    "🎉 Quiz Completed!";
+
+    document.getElementById("options")
+    .innerHTML="";
+
+    document.getElementById("nextBtn")
+    .style.display="none";
+
+    document.getElementById("result")
+    .innerHTML =
+    `Your Score: ${score}/10`;
+
+    // BADGES
+
+    if(score >= 9){
+
+        document.getElementById("badge")
+        .innerHTML =
+        "🏆 Culture Master";
+
+    }else if(score >= 7){
+
+        document.getElementById("badge")
+        .innerHTML =
+        "🌟 Quiz Champion";
+
+    }else{
+
+        document.getElementById("badge")
+        .innerHTML =
+        "🔥 Keep Practicing";
+
+    }
+
+}
+
+/* =========================================
+SAVE LEVEL PROGRESS
+========================================= */
+
+localStorage.setItem(
+"lastLevel",
+currentLevel
+);
+
+</script>
+
+</body>
+</html>
