@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+from flask import jsonify
+import requests
+>>>>>>> d34156b0438b97ddb5574d37a1582f9a90b37264
 from flask import Flask, request, redirect, render_template, session
 import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -17,7 +22,10 @@ db = mysql.connector.connect(
 @app.route("/")
 def landing():
     return render_template("home.html")
+<<<<<<< HEAD
 
+=======
+>>>>>>> d34156b0438b97ddb5574d37a1582f9a90b37264
 
 # Register
 @app.route("/register", methods=["GET", "POST"])
@@ -72,10 +80,17 @@ def login():
 
 
 # Logout
+<<<<<<< HEAD
 @app.route("/logout")
 def logout():
     session.pop("username", None)
     return redirect("/")
+=======
+#@app.route("/logout")
+#def logout():
+ #   session.pop("username", None)
+ #   return redirect("/")
+>>>>>>> d34156b0438b97ddb5574d37a1582f9a90b37264
 
 
 @app.route("/index")
@@ -162,6 +177,14 @@ def north():
 def south():
     return render_template("south.html")
 
+@app.route("/street")
+def street():
+    return render_template("street.html")
+
+@app.route("/sweet")
+def sweet():
+    return render_template("sweet.html")
+
 @app.route("/kathak")
 def kathak():
     return render_template("kathak.html")
@@ -194,6 +217,13 @@ def kathakali():
 def home():
     return render_template("home.html")
 
+<<<<<<< HEAD
+=======
+@app.route("/folk")
+def folk():
+    return render_template("folk.html")
+
+>>>>>>> d34156b0438b97ddb5574d37a1582f9a90b37264
 @app.route("/about")
 def about():
     return render_template("about.html")
