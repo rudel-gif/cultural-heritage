@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charminar - Cultural Heritage of India</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background:#f5f5f5;
+            overflow-x:hidden;
+        }
+
+        /* HERO SECTION */
+        .hero{
+            width:100%;
+            height:100vh;
+            background:
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('https://t4.ftcdn.net/jpg/00/47/49/01/360_F_47490128_JLClMTbZyVdxl3OW2m8H4vJHW7hDZ8Jj.jpg');
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+
+        .hero-content h1{
+            font-size:70px;
+            margin-bottom:20px;
+            text-shadow:3px 3px 10px black;
+        }
+
+        .hero-content p{
+            font-size:24px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            background:#8e44ad;
+            color:white;
+            padding:15px 35px;
+            text-decoration:none;
+            border-radius:50px;
+            font-size:20px;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .btn:hover{
+            background:#6c3483;
+            transform:scale(1.1);
+        }
+
+        /* SECTION TITLE */
+        .section-title{
+            text-align:center;
+            font-size:45px;
+            margin-top:50px;
+            color:#333;
+            margin-bottom:30px;
+        }
+
+        /* ABOUT SECTION */
+        .about{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:30px;
+            align-items:center;
+            margin-bottom:60px;
+        }
+
+        .about img{
+            width:100%;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .about-text{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+            line-height:1.8;
+            font-size:18px;
+        }
+
+        /* MORE INFO SECTION */
+        .more-info-section{
+            width:90%;
+            margin:auto;
+            margin-bottom:60px;
+        }
+
+        .more-info-box{
+            background:white;
+            padding:35px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+            line-height:1.9;
+            font-size:18px;
+        }
+
+        .more-info-box h3{
+            color:#8e44ad;
+            margin-bottom:10px;
+            margin-top:10px;
+        }
+
+        .more-info-box ul{
+            margin-left:25px;
+        }
+
+        .more-info-box li{
+            margin-bottom:12px;
+        }
+
+        .more-btn{
+            margin-top:25px;
+            background:#8e44ad;
+            color:white;
+            border:none;
+            padding:14px 30px;
+            border-radius:10px;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .more-btn:hover{
+            background:#6c3483;
+            transform:scale(1.05);
+        }
+
+        #extraInfo{
+            margin-top:25px;
+        }
+
+        /* GALLERY */
+        .gallery{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+            margin-bottom:60px;
+        }
+
+        .gallery img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+            border-radius:15px;
+            transition:0.4s;
+            box-shadow:0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .gallery img:hover{
+            transform:scale(1.05);
+        }
+
+        /* FACTS */
+        .facts{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+            margin-bottom:60px;
+        }
+
+        .fact-card{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            transition:0.3s;
+        }
+
+        .fact-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .fact-card i{
+            font-size:50px;
+            color:#8e44ad;
+            margin-bottom:20px;
+        }
+
+        .fact-card h3{
+            margin-bottom:15px;
+            font-size:24px;
+        }
+
+        /* 3D VIEWER */
+        .viewer-section{
+            width:90%;
+            margin:auto;
+            margin-bottom:60px;
+        }
+
+        .viewer-box{
+            background:white;
+            padding:20px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        iframe{
+            width:100%;
+            height:750px;
+            border:none;
+            border-radius:15px;
+        }
+
+        /* FOOTER */
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:25px;
+            margin-top:50px;
+            font-size:18px;
+        }
+
+        /* MOBILE */
+        @media(max-width:768px){
+
+            .hero-content h1{
+                font-size:40px;
+            }
+
+            .hero-content p{
+                font-size:18px;
+            }
+
+            .section-title{
+                font-size:32px;
+            }
+
+            iframe{
+                height:400px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+            <h1>Charminar</h1>
+            <p>The Pride of Hyderabad</p>
+            <a href="#viewer" class="btn">Explore in 3D</a>
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <h2 class="section-title">About Charminar</h2>
+
+    <section class="about">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Charminar-Pride_of_Hyderabad.jpg">
+
+        <div class="about-text">
+
+            <p>
+                Charminar is one of the most famous monuments in Hyderabad, Telangana, India.
+                It was built in 1591 by Sultan Muhammad Quli Qutb Shah.
+            </p>
+
+            <br>
+
+            <p>
+                The monument is known for its four grand minarets and beautiful Indo-Islamic architecture.
+                Charminar is considered the symbol of Hyderabad.
+            </p>
+
+            <br>
+
+            <p>
+                It was constructed to celebrate the end of a deadly plague and later became an important cultural landmark.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- MORE INFORMATION -->
+    <h2 class="section-title">Explore More About Charminar</h2>
+
+    <section class="more-info-section">
+
+        <div class="more-info-box">
+
+            <p>
+                Charminar is one of the most visited tourist attractions in South India.
+            </p>
+
+            <button class="more-btn" onclick="showMoreInfo()">
+                Read More
+            </button>
+
+            <div id="extraInfo" style="display:none;">
+
+                <br>
+
+                <h3>Location of Charminar</h3>
+
+                <p>
+                    Charminar is located in the heart of Hyderabad city in Telangana, India.
+                </p>
+
+                <br>
+
+                <h3>History of Charminar</h3>
+
+                <p>
+                    The monument was built in 1591 by Muhammad Quli Qutb Shah,
+                    the founder of Hyderabad. It was built after the plague ended in the city.
+                </p>
+
+                <br>
+
+                <h3>Architecture</h3>
+
+                <p>
+                    Charminar is built using granite and limestone.
+                    The monument has four elegant minarets, each about 56 meters high.
+                </p>
+
+                <br>
+
+                <h3>Interesting Facts</h3>
+
+                <ul>
+
+                    <li>Charminar means “Four Towers”.</li>
+
+                    <li>It is one of the most famous landmarks in India.</li>
+
+                    <li>There is a mosque on the top floor of the monument.</li>
+
+                    <li>Nearby markets are famous for pearls and bangles.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY -->
+    <h2 class="section-title">Beautiful Gallery</h2>
+
+    <section class="gallery">
+
+        <img src="https://st3.depositphotos.com/1141099/13866/i/450/depositphotos_138665290-stock-photo-charminar-in-hyderabad.jpg">
+
+        <img src="https://t4.ftcdn.net/jpg/00/47/49/01/360_F_47490128_JLClMTbZyVdxl3OW2m8H4vJHW7hDZ8Jj.jpg">
+
+        <img src="https://www.shutterstock.com/image-photo/hyderabad-india-may-18-2022-600nw-2299014077.jpg">
+
+        <img src="https://www.shutterstock.com/image-photo/hyderabadindia-december-23-2022-charminar-600nw-2545998573.jpg">
+
+    </section>
+
+    <!-- FACTS -->
+    <h2 class="section-title">Interesting Facts</h2>
+
+    <section class="facts">
+
+        <div class="fact-card">
+            <i class="fa-solid fa-torii-gate"></i>
+            <h3>Four Minarets</h3>
+            <p>Charminar is famous for its four grand towers.</p>
+        </div>
+
+        <div class="fact-card">
+            <i class="fa-solid fa-mosque"></i>
+            <h3>Historic Mosque</h3>
+            <p>There is a mosque located on the upper floor.</p>
+        </div>
+
+        <div class="fact-card">
+            <i class="fa-solid fa-city"></i>
+            <h3>Heart of Hyderabad</h3>
+            <p>Charminar is located at the center of Hyderabad city.</p>
+        </div>
+
+        <div class="fact-card">
+            <i class="fa-solid fa-camera"></i>
+            <h3>Tourist Attraction</h3>
+            <p>Millions of tourists visit Charminar every year.</p>
+        </div>
+
+    </section>
+
+    <!-- 3D VIEWER -->
+    <h2 class="section-title" id="viewer">3D Virtual Tour</h2>
+
+    <section class="viewer-section">
+
+        <div class="viewer-box">
+
+           <div class="sketchfab-embed-wrapper"> 
+            <iframe title="Charminar" 
+            frameborder="0" allowfullscreen mozallowfullscreen="true" 
+            webkitallowfullscreen="true" 
+            allow="autoplay; 
+            fullscreen; 
+            xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share 
+            src="https://sketchfab.com/models/7e345500b4034e448d2ffcd9b03e3241/embed"> 
+        </iframe> 
+    
+    </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Cultural Heritage of India | Charminar Virtual Experience
+    </footer>
+
+    <script>
+
+        function showMoreInfo(){
+
+            var info = document.getElementById("extraInfo");
+
+            if(info.style.display === "none"){
+                info.style.display = "block";
+            }
+            else{
+                info.style.display = "none";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

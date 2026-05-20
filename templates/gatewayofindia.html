@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gateway of India</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+            background:#f5f5f5;
+            overflow-x:hidden;
+        }
+
+        .hero{
+            width:100%;
+            height:100vh;
+            background:
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('https://images.unsplash.com/photo-1595658658481-d53d3f999875?q=80&w=1974&auto=format&fit=crop');
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+
+        .hero-content h1{
+            font-size:70px;
+            margin-bottom:20px;
+            text-shadow:3px 3px 10px black;
+        }
+
+        .hero-content p{
+            font-size:25px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            background:#ff6600;
+            color:white;
+            padding:15px 35px;
+            border-radius:50px;
+            text-decoration:none;
+            font-size:20px;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .btn:hover{
+            background:#ff3300;
+            transform:scale(1.1);
+        }
+
+        .section-title{
+            text-align:center;
+            font-size:45px;
+            margin:50px 0 30px;
+            color:#333;
+        }
+
+        .about{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:30px;
+            align-items:center;
+        }
+
+        .about img{
+            width:100%;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .about-text{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            line-height:1.8;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .gallery{
+            width:90%;
+            margin:40px auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+
+        .gallery img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+            border-radius:15px;
+            transition:0.4s;
+            box-shadow:0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .gallery img:hover{
+            transform:scale(1.05);
+        }
+
+        .facts{
+            width:90%;
+            margin:50px auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+        }
+
+        .fact-card{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            transition:0.3s;
+        }
+
+        .fact-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .fact-card i{
+            font-size:50px;
+            color:#ff6600;
+            margin-bottom:20px;
+        }
+
+        .viewer-section{
+            width:95%;
+            margin:auto;
+            margin-bottom:60px;
+        }
+
+        .viewer-box{
+            background:white;
+            padding:20px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        iframe{
+            width:100%;
+            height:750px;
+            border:none;
+            border-radius:15px;
+        }
+
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:25px;
+            margin-top:50px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Gateway of India</h1>
+        <p>The Pride of Mumbai</p>
+        <a href="#viewer" class="btn">Explore in 3D</a>
+    </div>
+</section>
+
+<h2 class="section-title">About Gateway of India</h2>
+
+<section class="about">
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Gateway_of_India_Mumbai.jpg">
+
+    <div class="about-text">
+        <p>
+            The Gateway of India is one of the most famous monuments in Mumbai.
+            It was built in 1924 to welcome King George V and Queen Mary to India.
+        </p>
+
+        <br>
+
+        <p>
+            Located near the Arabian Sea, the monument attracts millions of tourists every year.
+            It is a symbol of Mumbai’s cultural heritage and history.
+        </p>
+    </div>
+
+</section>
+
+<h2 class="section-title">Gallery</h2>
+
+<section class="gallery">
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Gateway_of_India_Mumbai.jpg">
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Gateway_of_India_at_night.jpg">
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Gateway_of_India_sunrise.jpg">
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Gateway_of_India_and_Taj_Hotel.jpg">
+
+</section>
+
+<h2 class="section-title">Interesting Facts</h2>
+
+<section class="facts">
+
+    <div class="fact-card">
+        <i class="fa-solid fa-landmark"></i>
+        <h3>Historic Monument</h3>
+        <p>Built in 1924 during British rule in India.</p>
+    </div>
+
+    <div class="fact-card">
+        <i class="fa-solid fa-water"></i>
+        <h3>Arabian Sea</h3>
+        <p>The monument faces the beautiful Arabian Sea.</p>
+    </div>
+
+    <div class="fact-card">
+        <i class="fa-solid fa-camera"></i>
+        <h3>Tourist Attraction</h3>
+        <p>Millions of tourists visit the Gateway every year.</p>
+    </div>
+
+    <div class="fact-card">
+        <i class="fa-solid fa-city"></i>
+        <h3>Icon of Mumbai</h3>
+        <p>The Gateway of India is a symbol of Mumbai city.</p>
+    </div>
+
+</section>
+
+<h2 class="section-title" id="viewer">3D Virtual Tour</h2>
+
+<section class="viewer-section">
+
+    <div class="viewer-box">
+
+        <iframe
+            title="Gateway of India 3D"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            src="https://sketchfab.com/models/c1931f0ab1e94200bfa89982159614f5/embed">
+        </iframe>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Cultural Heritage of India | Gateway of India
+</footer>
+
+</body>
+</html>
+

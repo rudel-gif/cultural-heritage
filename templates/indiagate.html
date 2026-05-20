@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Gate - Cultural Heritage of India</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background:#f5f5f5;
+            overflow-x:hidden;
+        }
+
+        /* HERO SECTION */
+        .hero{
+            width:100%;
+            height:100vh;
+            background:
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1974&auto=format&fit=crop');
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+
+        .hero-content h1{
+            font-size:70px;
+            margin-bottom:20px;
+            text-shadow:3px 3px 10px black;
+        }
+
+        .hero-content p{
+            font-size:24px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            background:#ff6600;
+            color:white;
+            padding:15px 35px;
+            text-decoration:none;
+            border-radius:50px;
+            font-size:20px;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .btn:hover{
+            background:#e65100;
+            transform:scale(1.1);
+        }
+
+        /* SECTION TITLE */
+        .section-title{
+            text-align:center;
+            font-size:45px;
+            margin-top:50px;
+            color:#333;
+            margin-bottom:30px;
+        }
+
+        /* ABOUT SECTION */
+        .about{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:30px;
+            align-items:center;
+            margin-bottom:60px;
+        }
+
+        .about img{
+            width:100%;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .about-text{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+            line-height:1.8;
+            font-size:18px;
+        }
+
+        /* MORE INFO */
+        .more-info-section{
+            width:90%;
+            margin:auto;
+            margin-bottom:60px;
+        }
+
+        .more-info-box{
+            background:white;
+            padding:35px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+            line-height:1.9;
+            font-size:18px;
+        }
+
+        .more-info-box h3{
+            color:#ff6600;
+            margin-top:15px;
+            margin-bottom:10px;
+        }
+
+        .more-info-box ul{
+            margin-left:25px;
+        }
+
+        .more-info-box li{
+            margin-bottom:12px;
+        }
+
+        .more-btn{
+            margin-top:25px;
+            background:#ff6600;
+            color:white;
+            border:none;
+            padding:14px 30px;
+            border-radius:10px;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .more-btn:hover{
+            background:#e65100;
+            transform:scale(1.05);
+        }
+
+        #extraInfo{
+            margin-top:25px;
+        }
+
+        /* GALLERY */
+        .gallery{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+            margin-bottom:60px;
+        }
+
+        .gallery img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+            border-radius:15px;
+            transition:0.4s;
+            box-shadow:0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .gallery img:hover{
+            transform:scale(1.05);
+        }
+
+        /* FACTS */
+        .facts{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+            margin-bottom:60px;
+        }
+
+        .fact-card{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            transition:0.3s;
+        }
+
+        .fact-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .fact-card i{
+            font-size:50px;
+            color:#ff6600;
+            margin-bottom:20px;
+        }
+
+        .fact-card h3{
+            margin-bottom:15px;
+            font-size:24px;
+        }
+
+        /* 3D VIEW */
+        .viewer-section{
+            width:90%;
+            margin:auto;
+            margin-bottom:60px;
+        }
+
+        .viewer-box{
+            background:white;
+            padding:20px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        iframe{
+            width:100%;
+            height:700px;
+            border:none;
+            border-radius:15px;
+        }
+
+        /* FOOTER */
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:25px;
+            margin-top:50px;
+            font-size:18px;
+        }
+
+        /* MOBILE */
+        @media(max-width:768px){
+
+            .hero-content h1{
+                font-size:40px;
+            }
+
+            .hero-content p{
+                font-size:18px;
+            }
+
+            .section-title{
+                font-size:32px;
+            }
+
+            iframe{
+                height:400px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+            <h1>India Gate</h1>
+            <p>The National War Memorial of India</p>
+            <a href="#viewer" class="btn">Explore in 3D</a>
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <h2 class="section-title">About India Gate</h2>
+
+    <section class="about">
+
+        <img src="https://t3.ftcdn.net/jpg/04/01/43/06/360_F_401430617_QU5FmwCbN3oiysrAnVN2yXreAkbPOESe.jpg">
+
+        
+
+           <div class="about-text">
+
+    <p>
+        India Gate is one of the most famous historical monuments located in New Delhi, India.
+        It was built as a war memorial to honor the brave Indian soldiers who lost their lives
+        during World War I and the Third Anglo-Afghan War.
+    </p>
+    <p>
+        The monument was designed by the famous British architect Sir Edwin Lutyens
+        and was completed in the year 1931. India Gate stands proudly at a height
+        of 42 meters and is made from beautiful sandstone.
+    </p>
+    <p>
+        Beneath the arch of India Gate is the Amar Jawan Jyoti,
+        an eternal flame that honors the unknown soldiers of India.
+        It is one of the most respected memorials in the country.
+    </p>
+    <p>
+        India Gate becomes especially beautiful at night when it is illuminated
+        with lights. The surrounding gardens and fountains make it a popular
+        tourist attraction and picnic destination for families and visitors.
+    </p>
+
+</div>
+        
+
+    </section>
+
+    <!-- MORE INFO -->
+    <h2 class="section-title">Explore More About India Gate</h2>
+
+    <section class="more-info-section">
+
+        <div class="more-info-box">
+
+            <p>
+                India Gate is one of the most iconic landmarks of India.
+        More than 70,000 Indian soldiers are remembered through this monument,
+        and the names of thousands of soldiers are engraved on its walls.
+        It represents courage, sacrifice, and national pride.
+
+            </p>
+
+            <button class="more-btn" onclick="showMoreInfo()">
+                Read More
+            </button>
+
+            <div id="extraInfo" style="display:none;">
+
+
+                <h3>Location of India Gate</h3>
+
+                <p>
+                    India Gate is located in the heart of New Delhi, India.
+                    It stands proudly on the Rajpath road surrounded by green gardens.
+                </p>
+
+                <br>
+
+                <h3>Who Built India Gate?</h3>
+
+                <p>
+                    India Gate was designed by Sir Edwin Lutyens,
+                    one of the most famous British architects.
+                    It was completed in 1931.
+                </p>
+
+                <br>
+
+                <h3>History of India Gate</h3>
+
+                <p>
+                    India Gate was built to honor more than 70,000 Indian soldiers
+                    who died during World War I and the Third Anglo-Afghan War.
+                    The names of thousands of soldiers are inscribed on its walls.
+                </p>
+
+                <br>
+
+                <h3>Architecture</h3>
+
+                <p>
+                    India Gate is made of sandstone and stands 42 meters tall.
+                    Its design is inspired by the Arc de Triomphe in Paris.
+                </p>
+
+                <br>
+
+                <h3>Amar Jawan Jyoti</h3>
+
+                <p>
+                    Under the arch of India Gate lies the Amar Jawan Jyoti,
+                    an eternal flame built to honor unknown soldiers of India.
+                </p>
+
+                <br>
+
+                <h3>Interesting Facts</h3>
+
+                <ul>
+
+                    <li>India Gate is illuminated beautifully at night.</li>
+
+                    <li>It is one of the most visited tourist places in Delhi.</li>
+
+                    <li>The monument is surrounded by beautiful lawns and fountains.</li>
+
+                    <li>Republic Day parades pass through India Gate every year.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY -->
+    <h2 class="section-title">Beautiful Gallery</h2>
+
+    <section class="gallery">
+
+        <img src="https://t3.ftcdn.net/jpg/01/43/04/22/360_F_143042216_yvwbsiCZDAqPX5r5GZnZYM4da30mMclA.jpg">
+
+        <img src="https://t4.ftcdn.net/jpg/07/24/54/37/360_F_724543702_X6g0dRWzWtEFPWXoiHAzXwZWnG3xKLxp.jpg">
+
+        <img src="https://www.shutterstock.com/shutterstock/videos/3640376771/thumb/1.jpg?ip=x480">
+
+        <img src="https://t4.ftcdn.net/jpg/04/09/50/27/360_F_409502739_pv2Lehr8cOUqSWE1nvWmdqC8u2RQc9PH.jpg">
+
+    </section>
+
+    <!-- FACTS -->
+    <h2 class="section-title">Interesting Facts</h2>
+
+    <section class="facts">
+
+        <div class="fact-card">
+            <i class="fa-solid fa-monument"></i>
+            <h3>War Memorial</h3>
+            <p>India Gate honors Indian soldiers who died in wars.</p>
+        </div>
+
+        <div class="fact-card">
+            <i class="fa-solid fa-fire"></i>
+            <h3>Amar Jawan Jyoti</h3>
+            <p>An eternal flame burns beneath India Gate.</p>
+        </div>
+
+        <div class="fact-card">
+            <i class="fa-solid fa-flag"></i>
+            <h3>National Pride</h3>
+            <p>It is one of the symbols of Indian patriotism.</p>
+        </div>
+
+        <div class="fact-card">
+            <i class="fa-solid fa-camera"></i>
+            <h3>Tourist Attraction</h3>
+            <p>Millions of visitors visit India Gate every year.</p>
+        </div>
+
+    </section>
+
+    <!-- 3D VIEW -->
+    <h2 class="section-title" id="viewer">3D Virtual Tour</h2>
+
+    <section class="viewer-section">
+
+        <div class="viewer-box">
+
+           <div class="sketchfab-embed-wrapper"> <iframe title="India Gate" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/59fe55328271479d82acb65310178d99/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/india-gate-59fe55328271479d82acb65310178d99?utm_medium=embed&utm_campaign=share-popup&utm_content=59fe55328271479d82acb65310178d99" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> India Gate </a> by <a href="https://sketchfab.com/Macwelshman?utm_medium=embed&utm_campaign=share-popup&utm_content=59fe55328271479d82acb65310178d99" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Macwelshman </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=59fe55328271479d82acb65310178d99" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Cultural Heritage of India | India Gate Virtual Experience
+    </footer>
+
+    <script>
+
+        function showMoreInfo(){
+
+            var info = document.getElementById("extraInfo");
+
+            if(info.style.display === "none"){
+                info.style.display = "block";
+            }
+            else{
+                info.style.display = "none";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

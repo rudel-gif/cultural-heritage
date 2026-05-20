@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taj Mahal - Cultural Heritage of India</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background:#f5f5f5;
+            overflow-x:hidden;
+        }
+
+        /* HERO SECTION */
+        .hero{
+            width:100%;
+            height:100vh;
+            background:
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=1974&auto=format&fit=crop');
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+
+        .hero-content h1{
+            font-size:70px;
+            margin-bottom:20px;
+            text-shadow:3px 3px 10px black;
+        }
+
+        .hero-content p{
+            font-size:24px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            background:#ff6600;
+            color:white;
+            padding:15px 35px;
+            text-decoration:none;
+            border-radius:50px;
+            font-size:20px;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .btn:hover{
+            background:#ff3300;
+            transform:scale(1.1);
+        }
+
+        /* SECTION TITLE */
+        .section-title{
+            text-align:center;
+            font-size:45px;
+            margin-top:50px;
+            color:#333;
+            margin-bottom:30px;
+        }
+
+        /* ABOUT SECTION */
+        .about{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:30px;
+            align-items:center;
+            margin-bottom:60px;
+        }
+
+        .about img{
+            width:100%;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .about-text{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+            line-height:1.8;
+            font-size:18px;
+        }
+  /* MORE INFO SECTION */
+
+.more-info-section{
+    width:90%;
+    margin:auto;
+    margin-bottom:60px;
+}
+.more-info-box{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    line-height:1.9;
+    font-size:18px;
+}
+
+.more-info-box h3{
+    color:#c0392b;
+    margin-bottom:10px;
+    margin-top:10px;
+}
+
+.more-info-box ul{
+    margin-left:25px;
+}
+
+.more-info-box li{
+    margin-bottom:12px;
+}
+
+.more-btn{
+    margin-top:25px;
+    background:#c0392b;
+    color:white;
+    border:none;
+    padding:14px 30px;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.more-btn:hover{
+    background:#922b21;
+    transform:scale(1.05);
+}
+
+#extraInfo{
+    margin-top:25px;
+}
+        /* GALLERY */
+        .gallery{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+            margin-bottom:60px;
+        }
+
+        .gallery img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+            border-radius:15px;
+            transition:0.4s;
+            box-shadow:0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .gallery img:hover{
+            transform:scale(1.05);
+        }
+
+        /* FACTS */
+        .facts{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+            margin-bottom:60px;
+        }
+
+        .fact-card{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            transition:0.3s;
+        }
+
+        .fact-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .fact-card i{
+            font-size:50px;
+            color:#ff6600;
+            margin-bottom:20px;
+        }
+
+        .fact-card h3{
+            margin-bottom:15px;
+            font-size:24px;
+        }
+
+        /* 3D VIEWER */
+        .viewer-section{
+            width:90%;
+            margin:auto;
+            margin-bottom:60px;
+        }
+
+        .viewer-box{
+            background:white;
+            padding:20px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        iframe{
+            width:100%;
+            height:750px;
+            border:none;
+            border-radius:15px;
+        }
+
+        /* FOOTER */
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:25px;
+            margin-top:50px;
+            font-size:18px;
+        }
+
+        /* MOBILE */
+        @media(max-width:768px){
+
+            .hero-content h1{
+                font-size:40px;
+            }
+
+            .hero-content p{
+                font-size:18px;
+            }
+
+            .section-title{
+                font-size:32px;
+            }
+
+            iframe{
+                height:400px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+            <h1>Taj Mahal</h1>
+            <p>The Symbol of Eternal Love</p>
+            <a href="#viewer" class="btn">Explore in 3D</a>
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <h2 class="section-title">About Taj Mahal</h2>
+
+    <section class="about">
+
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1974&auto=format&fit=crop">
+
+        <div class="about-text">
+
+            <p>
+                The Taj Mahal is one of the Seven Wonders of the World and a UNESCO World Heritage Site located in Agra, India.
+                It was built by Mughal Emperor Shah Jahan in memory of his beloved wife Mumtaz Mahal.
+            </p>
+
+            <br>
+
+            <p>
+                Made entirely of white marble, the monument is famous for its beautiful architecture,
+                symmetrical gardens, and historical importance.
+            </p>
+
+            <br>
+
+            <p>
+                Every year, millions of tourists visit the Taj Mahal to admire its beauty and rich cultural heritage.
+            </p>
+
+        </div>
+
+    </section>
+
+<!-- MORE INFORMATION SECTION -->
+
+<h2 class="section-title">Explore More About Taj Mahal</h2>
+
+<section class="more-info-section">
+
+    <div class="more-info-box">
+
+        <p>
+            The Taj Mahal is one of the Seven Wonders of the World and the most beautiful monument in India.
+        </p>
+
+        <button class="more-btn" onclick="showMoreInfo()">
+            Read More
+        </button>
+
+        <div id="extraInfo" style="display:none;">
+
+            <br>
+
+            <h3>Location of Taj Mahal</h3>
+
+            <p>
+                The Taj Mahal is located in Agra city in the state of Uttar Pradesh, India.
+                It is situated on the banks of the Yamuna River and attracts millions of tourists every year.
+            </p>
+
+            <br>
+
+            <h3>Who Built the Taj Mahal?</h3>
+
+            <p>
+                The Taj Mahal was built by the Mughal Emperor Shah Jahan in memory of his beloved wife Mumtaz Mahal.
+                Construction started in 1632 and was completed in 1653.
+            </p>
+
+            <br>
+
+            <h3>History of Taj Mahal</h3>
+
+            <p>
+                Mumtaz Mahal died during childbirth in 1631. Shah Jahan was deeply saddened by her death
+                and decided to build a magnificent white marble monument in her memory.
+                The Taj Mahal became a symbol of eternal love and devotion.
+            </p>
+
+            <br>
+
+            <h3>Architecture</h3>
+
+            <p>
+                The Taj Mahal is built using pure white marble and combines Persian, Islamic,
+                and Indian architectural styles. The monument includes beautiful domes,
+                gardens, fountains, carvings, and calligraphy designs.
+            </p>
+
+            <br>
+
+            <h3>Main Attractions Inside Taj Mahal</h3>
+
+            <ul>
+
+                <li><b>Main Dome</b> – The large white marble dome is the most iconic part of the monument.</li>
+
+                <li><b>Reflecting Pool</b> – A beautiful water pool reflects the image of the Taj Mahal.</li>
+
+                <li><b>Mosque</b> – A red sandstone mosque is located beside the monument.</li>
+
+                <li><b>Gardens</b> – The Taj Mahal is surrounded by beautiful Mughal gardens.</li>
+
+            </ul>
+
+            <br>
+
+            <h3>UNESCO World Heritage Site</h3>
+
+            <p>
+                UNESCO declared the Taj Mahal a World Heritage Site in 1983 because of its historical,
+                cultural, and architectural importance.
+            </p>
+
+            <br>
+
+            <h3>Interesting Facts</h3>
+
+            <ul>
+
+                <li>The Taj Mahal changes color during different times of the day.</li>
+
+                <li>More than 20,000 workers participated in its construction.</li>
+
+                <li>It is one of the most visited monuments in the world.</li>
+
+                <li>The Taj Mahal is known as the “Symbol of Love”.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+    <!-- IMAGE GALLERY -->
+    <h2 class="section-title">Beautiful Gallery</h2>
+
+    <section class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=1974&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1974&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?q=80&w=1974&auto=format&fit=crop">
+
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/034/248/194/small/night-view-of-the-taj-mahal-generative-ai-photo.jpg">
+
+    </section>
+
+
+    <!-- FACTS -->
+    <h2 class="section-title">Interesting Facts</h2>
+
+    <section class="facts">
+
+        <div class="fact-card">
+            <i class="fa-solid fa-landmark"></i>
+            <h3>UNESCO Site</h3>
+            <p>The Taj Mahal became a UNESCO World Heritage Site in 1983.</p>
+        </div>
+
+        <div class="fact-card">
+            <i class="fa-solid fa-heart"></i>
+            <h3>Symbol of Love</h3>
+            <p>It was built by Shah Jahan in memory of Mumtaz Mahal.</p>
+        </div>
+
+        <div class="fact-card">
+            <i class="fa-solid fa-clock"></i>
+            <h3>22 Years</h3>
+            <p>The monument took approximately 22 years to complete.</p>
+        </div>
+
+        <div class="fact-card">
+            <i class="fa-solid fa-users"></i>
+            <h3>Millions of Visitors</h3>
+            <p>Tourists from around the world visit the Taj Mahal every year.</p>
+        </div>
+
+    </section>
+
+
+    <!-- 3D VIEWER -->
+    <h2 class="section-title" id="viewer">3D Virtual Tour</h2>
+
+    <section class="viewer-section">
+
+        <div class="viewer-box">
+
+            <iframe
+                title="Taj Mahal 3D"
+                allowfullscreen
+                mozallowfullscreen="true"
+                webkitallowfullscreen="true"
+                allow="autoplay; fullscreen; xr-spatial-tracking"
+                xr-spatial-tracking
+                execution-while-out-of-viewport
+                execution-while-not-rendered
+                web-share
+                src="https://sketchfab.com/models/c1931f0ab1e94200bfa89982159614f5/embed">
+            </iframe>
+
+        </div>
+
+    </section>
+
+<script>
+
+function showMoreInfo(){
+
+    var info = document.getElementById("extraInfo");
+
+    if(info.style.display === "none"){
+        info.style.display = "block";
+    }
+    else{
+        info.style.display = "none";
+    }
+}
+
+</script>
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Cultural Heritage of India | Taj Mahal Virtual Experience
+    </footer>
+
+</body>
+</html>
+```

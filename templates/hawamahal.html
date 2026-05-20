@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawa Mahal - Cultural Heritage of India</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background:#f5f5f5;
+            overflow-x:hidden;
+        }
+
+        /* HERO SECTION */
+        .hero{
+            width:100%;
+            height:100vh;
+            background:
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('https://t3.ftcdn.net/jpg/01/87/66/72/360_F_187667273_tfO0T8L0WfJvBcHB7vWxY20bbxJtO2b7.jpg');
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+
+        .hero-content h1{
+            font-size:70px;
+            margin-bottom:20px;
+            text-shadow:3px 3px 10px black;
+        }
+
+        .hero-content p{
+            font-size:24px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            background:#e91e63;
+            color:white;
+            padding:15px 35px;
+            text-decoration:none;
+            border-radius:50px;
+            font-size:20px;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .btn:hover{
+            background:#c2185b;
+            transform:scale(1.1);
+        }
+
+        /* SECTION TITLE */
+        .section-title{
+            text-align:center;
+            font-size:45px;
+            margin-top:50px;
+            color:#333;
+            margin-bottom:30px;
+        }
+
+        /* ABOUT */
+        .about{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:30px;
+            align-items:center;
+            margin-bottom:60px;
+        }
+
+        .about img{
+            width:100%;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .about-text{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+            line-height:1.8;
+            font-size:18px;
+        }
+
+        /* MORE INFO */
+        .more-info-section{
+            width:90%;
+            margin:auto;
+            margin-bottom:60px;
+        }
+
+        .more-info-box{
+            background:white;
+            padding:35px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+            line-height:1.9;
+            font-size:18px;
+        }
+
+        .more-info-box h3{
+            color:#e91e63;
+            margin-top:15px;
+            margin-bottom:10px;
+        }
+
+        .more-info-box ul{
+            margin-left:25px;
+        }
+
+        .more-info-box li{
+            margin-bottom:12px;
+        }
+
+        .more-btn{
+            margin-top:25px;
+            background:#e91e63;
+            color:white;
+            border:none;
+            padding:14px 30px;
+            border-radius:10px;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .more-btn:hover{
+            background:#c2185b;
+            transform:scale(1.05);
+        }
+
+        #extraInfo{
+            margin-top:25px;
+        }
+
+        /* GALLERY */
+        .gallery{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+            margin-bottom:60px;
+        }
+
+        .gallery img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+            border-radius:15px;
+            transition:0.4s;
+            box-shadow:0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .gallery img:hover{
+            transform:scale(1.05);
+        }
+
+        /* FACTS */
+        .facts{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+            margin-bottom:60px;
+        }
+
+        .fact-card{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            transition:0.3s;
+        }
+
+        .fact-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .fact-card i{
+            font-size:50px;
+            color:#e91e63;
+            margin-bottom:20px;
+        }
+
+        .fact-card h3{
+            margin-bottom:15px;
+            font-size:24px;
+        }
+
+        /* 3D VIEW */
+        .viewer-section{
+            width:90%;
+            margin:auto;
+            margin-bottom:60px;
+        }
+
+        .viewer-box{
+            background:white;
+            padding:20px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        iframe{
+            width:100%;
+            height:700px;
+            border:none;
+            border-radius:15px;
+        }
+
+        /* FOOTER */
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:25px;
+            margin-top:50px;
+            font-size:18px;
+        }
+
+        @media(max-width:768px){
+
+            .hero-content h1{
+                font-size:40px;
+            }
+
+            iframe{
+                height:400px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+            <h1>Hawa Mahal</h1>
+            <p>The Palace of Winds</p>
+            <a href="#viewer" class="btn">Explore in 3D</a>
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <h2 class="section-title">About Hawa Mahal</h2>
+
+    <section class="about">
+
+        <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1974&auto=format&fit=crop">
+
+        <div class="about-text">
+
+            <p>
+                Hawa Mahal is one of the most beautiful historical monuments located in Jaipur, Rajasthan.
+                It is popularly known as the “Palace of Winds”.
+            </p>
+
+            <br>
+
+            <p>
+                The monument was built in 1799 by Maharaja Sawai Pratap Singh.
+                It is famous for its unique honeycomb design and beautiful pink sandstone architecture.
+            </p>
+
+            <br>
+
+            <p>
+                Hawa Mahal has 953 small windows called “Jharokhas”
+                that allow cool air to pass through the palace.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- MORE INFO -->
+    <h2 class="section-title">Explore More About Hawa Mahal</h2>
+
+    <section class="more-info-section">
+
+        <div class="more-info-box">
+
+            <p>
+                Hawa Mahal is one of the most iconic landmarks of Rajasthan.
+            </p>
+
+            <button class="more-btn" onclick="showMoreInfo()">
+                Read More
+            </button>
+
+            <div id="extraInfo" style="display:none;">
+
+                <br>
+
+                <h3>Location of Hawa Mahal</h3>
+
+                <p>
+                    Hawa Mahal is located in Jaipur, the Pink City of Rajasthan, India.
+                    It stands in the heart of the old city.
+                </p>
+
+                <br>
+
+                <h3>History of Hawa Mahal</h3>
+
+                <p>
+                    The palace was constructed so royal women could observe street festivals
+                    and daily life without being seen by the public.
+                </p>
+
+                <br>
+
+                <h3>Architecture</h3>
+
+                <p>
+                    Hawa Mahal is made from pink and red sandstone.
+                    Its five-story structure resembles the crown of Lord Krishna.
+                </p>
+
+                <br>
+
+                <h3>Interesting Facts</h3>
+
+                <ul>
+
+                    <li>Hawa Mahal has 953 windows.</li>
+
+                    <li>It is designed in Rajput architecture style.</li>
+
+                    <li>The palace remains naturally cool even during summer.</li>
+
+                    <li>It is one of Jaipur’s most visited tourist attractions.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY -->
+    <h2 class="section-title">Beautiful Gallery</h2>
+
+    <section class="gallery">
+
+        <img src="https://images6.alphacoders.com/562/562059.jpg">
+
+        <img src="https://t3.ftcdn.net/jpg/11/48/51/48/360_F_1148514840_GDY4xl4wAAvezm8Fb08u6fKiBWhEuOcT.jpg">
+
+        <img src="https://thumbs.dreamstime.com/b/beautiful-interior-architecture-famous-jaipur-wind-palace-hawa-mahal-29777019.jpg">
+
+        <img src="https://media.istockphoto.com/id/1202432485/photo/hawa-mahal-and-jantar-mantar.jpg?s=612x612&w=0&k=20&c=gfUGfTVZVIXR6vZ7Cgr96bxjzeTvs7Uu8ERI_3kCB7Y=">
+
+    </section>
+
+    <!-- FACTS -->
+    <h2 class="section-title">Interesting Facts</h2>
+
+    <section class="facts">
+
+        <div class="fact-card">
+            <i class="fa-solid fa-building"></i>
+            <h3>953 Windows</h3>
+            <p>Hawa Mahal contains 953 beautifully designed windows.</p>
+        </div>
+
+        <div class="fact-card">
+            <i class="fa-solid fa-wind"></i>
+            <h3>Cool Air</h3>
+            <p>The palace naturally stays cool because of airflow.</p>
+        </div>
+
+        <div class="fact-card">
+            <i class="fa-solid fa-crown"></i>
+            <h3>Royal Palace</h3>
+            <p>It was built for the royal women of Jaipur.</p>
+        </div>
+
+        <div class="fact-card">
+            <i class="fa-solid fa-camera"></i>
+            <h3>Tourist Attraction</h3>
+            <p>Millions of tourists visit Hawa Mahal every year.</p>
+        </div>
+
+    </section>
+
+    <!-- 3D VIEW -->
+    <h2 class="section-title" id="viewer">3D Virtual Tour</h2>
+
+    <section class="viewer-section">
+
+        <div class="viewer-box">
+
+            <iframe 
+            width="1024" 
+            height="576" 
+            src="https://www.youtube.com/embed/B1fXqWZiTCI" 
+            title="Hawa Mahal 3D Model" 
+            frameborder="0" 
+            allow="accelerometer; 
+            autoplay; clipboard-write; 
+            encrypted-media; gyroscope; 
+            picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin"
+             allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Cultural Heritage of India | Hawa Mahal Virtual Experience
+    </footer>
+
+    <script>
+
+        function showMoreInfo(){
+
+            var info = document.getElementById("extraInfo");
+
+            if(info.style.display === "none"){
+                info.style.display = "block";
+            }
+            else{
+                info.style.display = "none";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

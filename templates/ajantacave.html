@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajanta Caves - Cultural Heritage of India</title>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background:#f5f5f5;
+            overflow-x:hidden;
+        }
+
+        /* HERO SECTION */
+
+        .hero{
+            width:100%;
+            height:100vh;
+
+            background:
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('https://t4.ftcdn.net/jpg/02/28/13/25/360_F_228132543_UnVy7HkGlvTdFpbklHqi3TBdVtJilkv5.jpg');
+
+            background-size:cover;
+            background-position:center;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+
+        .hero-content h1{
+            font-size:70px;
+            margin-bottom:20px;
+            text-shadow:3px 3px 10px black;
+        }
+
+        .hero-content p{
+            font-size:25px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            background:#8e6b23;
+            color:white;
+            padding:15px 35px;
+            text-decoration:none;
+            border-radius:50px;
+            font-size:20px;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .btn:hover{
+            background:#5c4314;
+            transform:scale(1.1);
+        }
+
+        /* SECTION TITLE */
+
+        .section-title{
+            text-align:center;
+            font-size:45px;
+            margin-top:50px;
+            margin-bottom:30px;
+            color:#333;
+        }
+
+        /* ABOUT SECTION */
+
+        .about{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:30px;
+            align-items:center;
+            margin-bottom:60px;
+        }
+
+        .about img{
+            width:100%;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .about-text{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+            line-height:1.9;
+            font-size:18px;
+        }
+
+        /* MORE INFO */
+
+        .more-info-section{
+            width:90%;
+            margin:auto;
+            margin-bottom:60px;
+        }
+
+        .more-info-box{
+            background:white;
+            padding:35px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+            line-height:1.9;
+            font-size:18px;
+        }
+
+        .more-info-box h3{
+            color:#8e6b23;
+            margin-top:15px;
+            margin-bottom:10px;
+        }
+
+        .more-info-box ul{
+            margin-left:25px;
+        }
+
+        .more-info-box li{
+            margin-bottom:10px;
+        }
+
+        .more-btn{
+            margin-top:25px;
+            background:#8e6b23;
+            color:white;
+            border:none;
+            padding:14px 30px;
+            border-radius:10px;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .more-btn:hover{
+            background:#5c4314;
+            transform:scale(1.05);
+        }
+
+        #extraInfo{
+            margin-top:25px;
+        }
+
+        /* GALLERY */
+
+        .gallery{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+            margin-bottom:60px;
+        }
+
+        .gallery img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+            border-radius:15px;
+            transition:0.4s;
+            box-shadow:0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .gallery img:hover{
+            transform:scale(1.05);
+        }
+
+        /* FACTS */
+
+        .facts{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+            margin-bottom:60px;
+        }
+
+        .fact-card{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            transition:0.3s;
+        }
+
+        .fact-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .fact-card i{
+            font-size:50px;
+            color:#8e6b23;
+            margin-bottom:20px;
+        }
+
+        .fact-card h3{
+            margin-bottom:15px;
+            font-size:24px;
+        }
+
+        /* 3D VIEWER */
+
+        .viewer-section{
+            width:90%;
+            margin:auto;
+            margin-bottom:60px;
+        }
+
+        .viewer-box{
+            background:white;
+            padding:20px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        iframe{
+            width:100%;
+            height:750px;
+            border:none;
+            border-radius:15px;
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:25px;
+            margin-top:50px;
+            font-size:18px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:768px){
+
+            .hero-content h1{
+                font-size:40px;
+            }
+
+            .hero-content p{
+                font-size:18px;
+            }
+
+            .section-title{
+                font-size:32px;
+            }
+
+            iframe{
+                height:400px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Ajanta Caves</h1>
+
+            <p>The Ancient Buddhist Masterpiece of India</p>
+
+            <a href="#viewer" class="btn">Explore in 3D</a>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <h2 class="section-title">About Ajanta Caves</h2>
+
+    <section class="about">
+
+        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/15/54/a7/15.jpg">
+
+        <div class="about-text">
+
+            <p>
+                Ajanta Caves are one of the most famous ancient rock-cut caves
+                in India located in Maharashtra.
+            </p>
+
+            <br>
+
+            <p>
+                These caves are known for beautiful Buddhist paintings,
+                sculptures, and ancient architecture.
+            </p>
+
+            <br>
+
+            <p>
+                The caves were built around the 2nd century BCE
+                and are a UNESCO World Heritage Site.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- MORE INFORMATION -->
+
+    <h2 class="section-title">Explore More About Ajanta Caves</h2>
+
+    <section class="more-info-section">
+
+        <div class="more-info-box">
+
+            <p>
+                Ajanta Caves are one of the greatest historical treasures of India.
+            </p>
+
+            <button class="more-btn" onclick="showMoreInfo()">
+                Read More
+            </button>
+
+            <div id="extraInfo" style="display:none;">
+
+                <br>
+
+                <h3>Location of Ajanta Caves</h3>
+
+                <p>
+                    Ajanta Caves are located near Aurangabad district in Maharashtra, India.
+                </p>
+
+                <br>
+
+                <h3>History of Ajanta Caves</h3>
+
+                <p>
+                    The caves were built by Buddhist monks between
+                    the 2nd century BCE and 6th century CE.
+                    These caves were used for prayer, meditation, and education.
+                </p>
+
+                <br>
+
+                <h3>Architecture</h3>
+
+                <p>
+                    The caves are carved into rocky hills and contain
+                    detailed sculptures, paintings, prayer halls, and monasteries.
+                </p>
+
+                <br>
+
+                <h3>Famous Paintings</h3>
+
+                <p>
+                    Ajanta paintings show stories from the life of Buddha
+                    and ancient Indian culture.
+                </p>
+
+                <br>
+
+                <h3>Interesting Facts</h3>
+
+                <ul>
+
+                    <li>Ajanta Caves are more than 2000 years old.</li>
+
+                    <li>There are around 30 caves in Ajanta.</li>
+
+                    <li>UNESCO declared it a World Heritage Site in 1983.</li>
+
+                    <li>The caves attract tourists from all over the world.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY -->
+
+    <h2 class="section-title">Beautiful Gallery</h2>
+
+    <section class="gallery">
+
+        <img src="https://media.istockphoto.com/id/629821246/photo/kailas-temple-in-ellora-caves-complex-in-india.jpg?s=612x612&w=0&k=20&c=ei3N4dugQCPoifA-fE5aDIcgkGqkQgQ2_ASvdxxVnV0=">
+
+        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/ajanta-caves-chhatrapati-sambhaji-nagar-maharashtra-attr-hero-1?qlt=82&ts=1727010611256">
+
+        <img src="https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/1/2014/02/Ajanta1.jpg">
+
+        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/ajanta-caves-chhatrapati-sambhaji-nagar-maharashtra-attr-hero-3?qlt=82&ts=1727010505985">
+
+    </section>
+
+    <!-- FACTS -->
+
+    <h2 class="section-title">Interesting Facts</h2>
+
+    <section class="facts">
+
+        <div class="fact-card">
+
+            <i class="fa-solid fa-mountain"></i>
+
+            <h3>Rock-Cut Caves</h3>
+
+            <p>The caves are carved directly into rocky hills.</p>
+
+        </div>
+
+        <div class="fact-card">
+
+            <i class="fa-solid fa-paintbrush"></i>
+
+            <h3>Ancient Paintings</h3>
+
+            <p>Ajanta Caves contain world-famous Buddhist paintings.</p>
+
+        </div>
+
+        <div class="fact-card">
+
+            <i class="fa-solid fa-landmark"></i>
+
+            <h3>UNESCO Site</h3>
+
+            <p>Ajanta Caves are a UNESCO World Heritage Site.</p>
+
+        </div>
+
+        <div class="fact-card">
+
+            <i class="fa-solid fa-book"></i>
+
+            <h3>Buddhist Heritage</h3>
+
+            <p>The caves represent ancient Buddhist culture and teachings.</p>
+
+        </div>
+
+    </section>
+
+    <!-- 3D VIEWER -->
+
+    <h2 class="section-title" id="viewer">3D Virtual Tour</h2>
+
+    <section class="viewer-section">
+
+        <div class="viewer-box">
+
+            <div class="sketchfab-embed-wrapper">
+                 <iframe title="CAV Eglb" frameborder="0"
+                  allowfullscreen mozallowfullscreen="true"
+                   webkitallowfullscreen="true" 
+                   allow="autoplay; 
+                   fullscreen; xr-spatial-tracking" 
+                   xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share 
+                   src="https://sketchfab.com/models/d916f1bc949c4284ab3fe56ddbfe660d/embed"> </iframe> 
+                   <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> 
+                    <a href="https://sketchfab.com/3d-models/cav-eglb-d916f1bc949c4284ab3fe56ddbfe660d?utm_medium=embed&utm_campaign=share-popup&utm_content=d916f1bc949c4284ab3fe56ddbfe660d" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> CAV Eglb </a> by <a href="https://sketchfab.com/JaizEe.Abby?utm_medium=embed&utm_campaign=share-popup&utm_content=d916f1bc949c4284ab3fe56ddbfe660d" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> JaizEe.Abby </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=d916f1bc949c4284ab3fe56ddbfe660d" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+            </p></div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Cultural Heritage of India | Ajanta Caves Virtual Experience
+
+    </footer>
+
+    <script>
+
+        function showMoreInfo(){
+
+            var info = document.getElementById("extraInfo");
+
+            if(info.style.display === "none"){
+                info.style.display = "block";
+            }
+            else{
+                info.style.display = "none";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

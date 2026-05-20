@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qutub Minar</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+            background:#f5f5f5;
+            overflow-x:hidden;
+        }
+
+        .hero{
+            width:100%;
+            height:100vh;
+            background:
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('https://media.istockphoto.com/id/165204592/photo/qutub-minar-delhi-india.jpg?s=612x612&w=0&k=20&c=YvFLPmQmlgCyX7RGZA1VpKctdC6QsChINzLSMDPNI9k=');
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+
+        .hero-content h1{
+            font-size:70px;
+            margin-bottom:20px;
+            text-shadow:3px 3px 10px black;
+        }
+
+        .hero-content p{
+            font-size:25px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            background:#8e44ad;
+            color:white;
+            padding:15px 35px;
+            border-radius:50px;
+            text-decoration:none;
+            font-size:20px;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .btn:hover{
+            background:#6c3483;
+            transform:scale(1.1);
+        }
+
+        .section-title{
+            text-align:center;
+            font-size:45px;
+            margin:50px 0 30px;
+            color:#333;
+        }
+
+        .about{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:30px;
+            align-items:center;
+        }
+
+        .about img{
+            width:100%;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .about-text{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            line-height:1.8;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+        }
+  /* MORE INFO SECTION */
+
+.more-info-section{
+    width:90%;
+    margin:auto;
+    margin-bottom:60px;
+}
+.more-info-box{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    line-height:1.9;
+    font-size:18px;
+}
+
+.more-info-box h3{
+    color:#c0392b;
+    margin-bottom:10px;
+    margin-top:10px;
+}
+
+.more-info-box ul{
+    margin-left:25px;
+}
+
+.more-info-box li{
+    margin-bottom:12px;
+}
+
+.more-btn{
+    margin-top:25px;
+    background:#c0392b;
+    color:white;
+    border:none;
+    padding:14px 30px;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.more-btn:hover{
+    background:#922b21;
+    transform:scale(1.05);
+}
+
+#extraInfo{
+    margin-top:25px;
+}
+        .gallery{
+            width:90%;
+            margin:40px auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+
+        .gallery img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+            border-radius:15px;
+            transition:0.4s;
+            box-shadow:0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .gallery img:hover{
+            transform:scale(1.05);
+        }
+
+        .facts{
+            width:90%;
+            margin:50px auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+        }
+
+        .fact-card{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            transition:0.3s;
+        }
+
+        .fact-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .fact-card i{
+            font-size:50px;
+            color:#8e44ad;
+            margin-bottom:20px;
+        }
+
+        .viewer-section{
+            width:95%;
+            margin:auto;
+            margin-bottom:60px;
+        }
+
+        .viewer-box{
+            background:white;
+            padding:20px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        iframe{
+            width:100%;
+            height:750px;
+            border:none;
+            border-radius:15px;
+        }
+
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:25px;
+            margin-top:50px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Qutub Minar</h1>
+        <p>The Tallest Brick Minaret in the World</p>
+        <a href="#viewer" class="btn">Explore in 3D</a>
+    </div>
+</section>
+
+<h2 class="section-title">About Qutub Minar</h2>
+
+<section class="about">
+
+    <img src="https://www.vacationindia.com/wp-content/uploads/2022/05/50-qutub-minar-complex-new-delhi.jpg">
+
+    <div class="about-text">
+        <p>
+            Qutub Minar is a UNESCO World Heritage Site located in Delhi.
+            It was built in the 12th century by Qutb-ud-din Aibak.
+        </p>
+
+        <br>
+
+        <p>
+            Standing at 73 meters tall, it is one of the tallest brick minarets in the world.
+            The monument is famous for its Indo-Islamic architecture and historical importance.
+        </p>
+    </div>
+
+</section>
+<!-- MORE INFORMATION SECTION -->
+
+<h2 class="section-title">Explore More About Qutub Minar</h2>
+
+<section class="more-info-section">
+
+    <div class="more-info-box">
+
+        <p>
+            Qutub Minar is one of the tallest and most famous historical monuments in India.
+        </p>
+
+        <button class="more-btn" onclick="showMoreInfo()">
+            Read More
+        </button>
+
+        <div id="extraInfo" style="display:none;">
+
+            <br>
+
+            <h3>Location of Qutub Minar</h3>
+
+            <p>
+                Qutub Minar is located in Mehrauli, Delhi, India.
+                It is one of the most visited tourist attractions in the country
+                and is surrounded by several ancient historical structures.
+            </p>
+
+            <br>
+
+            <h3>Who Built Qutub Minar?</h3>
+
+            <p>
+                Qutub Minar was started by Qutb-ud-din Aibak in 1192 after the defeat
+                of the last Hindu kingdom in Delhi. Later, his successor Iltutmish
+                completed the remaining floors of the tower.
+            </p>
+
+            <br>
+
+            <h3>History of Qutub Minar</h3>
+
+            <p>
+                The monument was built to celebrate the beginning of Muslim rule in India.
+                Over the years, natural disasters such as earthquakes damaged some parts
+                of the tower, but it was repaired several times by different rulers.
+            </p>
+
+            <br>
+
+            <h3>Architecture</h3>
+
+            <p>
+                Qutub Minar is made of red sandstone and marble and is designed in
+                Indo-Islamic architectural style. The tower has beautiful carvings,
+                Arabic inscriptions, balconies, and detailed patterns.
+            </p>
+
+            <br>
+
+            <h3>Main Attractions Inside the Qutub Complex</h3>
+
+            <ul>
+
+                <li><b>Qutub Minar Tower</b> – The 73-meter tall tower is the main attraction.</li>
+
+                <li><b>Iron Pillar</b> – A famous ancient iron pillar that never rusts.</li>
+
+                <li><b>Alai Darwaza</b> – A beautiful gateway built by Alauddin Khilji.</li>
+
+                <li><b>Quwwat-ul-Islam Mosque</b> – One of the oldest mosques in India.</li>
+
+            </ul>
+
+            <br>
+
+            <h3>UNESCO World Heritage Site</h3>
+
+            <p>
+                UNESCO declared Qutub Minar a World Heritage Site in 1993 because of its
+                historical and architectural importance.
+            </p>
+
+            <br>
+
+            <h3>Interesting Facts</h3>
+
+            <ul>
+
+                <li>Qutub Minar is 73 meters tall.</li>
+
+                <li>It has five different floors with balconies.</li>
+
+                <li>The tower contains verses from the Quran carved on its walls.</li>
+
+                <li>It is one of the tallest brick minarets in the world.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+<h2 class="section-title">Gallery</h2>
+
+<section class="gallery">
+
+    <img src="https://akm-img-a-in.tosshub.com/sites/media2/indiatoday/images/stories/2017April/qutub1_042717100950.jpg">
+
+    <img src="https://media.istockphoto.com/id/1160975059/photo/qutub-minar-and-its-monuments-delhi.jpg?s=612x612&w=0&k=20&c=nCQpmVYsfFYpMg8i-6kQkuHfQ9P-5IXGxyADVItiD_k=">
+
+    <img src="https://staybook.in/_next/image?url=https%3A%2F%2Fimages.staybook.in%2Fthings-to-do%2Fqutub-minar-express-entry-pass-no-wait-access%2F2.jpg&w=828&q=75">
+
+    <img src="https://media.istockphoto.com/id/155269887/photo/wide-view-of-the-qutub-minar-ruins-packed-with-tourists.jpg?s=612x612&w=0&k=20&c=EOFtB1tgkfP9-Tz3ESCPvAJnFKdVNYlQ4ZYSeB2B9o0=">
+
+</section>
+
+<h2 class="section-title">Interesting Facts</h2>
+
+<section class="facts">
+
+    <div class="fact-card">
+        <i class="fa-solid fa-tower-observation"></i>
+        <h3>73 Meters Tall</h3>
+        <p>Qutub Minar is one of the tallest brick towers in the world.</p>
+    </div>
+
+    <div class="fact-card">
+        <i class="fa-solid fa-landmark"></i>
+        <h3>UNESCO Site</h3>
+        <p>It became a UNESCO World Heritage Site in 1993.</p>
+    </div>
+
+    <div class="fact-card">
+        <i class="fa-solid fa-clock"></i>
+        <h3>Historic Monument</h3>
+        <p>The monument was constructed in the 12th century.</p>
+    </div>
+
+    <div class="fact-card">
+        <i class="fa-solid fa-camera"></i>
+        <h3>Tourist Attraction</h3>
+        <p>Millions of visitors come to see Qutub Minar every year.</p>
+    </div>
+
+</section>
+
+<h2 class="section-title" id="viewer">3D Virtual Tour</h2>
+
+<section class="viewer-section">
+
+    <div class="viewer-box">
+
+<div class="sketchfab-embed-wrapper"> <iframe title="Qutub Minar" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/cf4f8f1bcdbd4cb49056c688f8739e77/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/qutub-minar-cf4f8f1bcdbd4cb49056c688f8739e77?utm_medium=embed&utm_campaign=share-popup&utm_content=cf4f8f1bcdbd4cb49056c688f8739e77" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Qutub Minar </a> by <a href="https://sketchfab.com/anishroyalinc?utm_medium=embed&utm_campaign=share-popup&utm_content=cf4f8f1bcdbd4cb49056c688f8739e77" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> AnishRoyalinc </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=cf4f8f1bcdbd4cb49056c688f8739e77" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+    </div>
+
+</section>
+<script>
+
+function showMoreInfo(){
+
+    var info = document.getElementById("extraInfo");
+
+    if(info.style.display === "none"){
+        info.style.display = "block";
+    }
+    else{
+        info.style.display = "none";
+    }
+}
+
+</script>
+<footer>
+    © 2026 Cultural Heritage of India | Qutub Minar
+</footer>
+
+</body>
+</html>

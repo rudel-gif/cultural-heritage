@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-=======
-from flask import jsonify
-import requests
->>>>>>> d34156b0438b97ddb5574d37a1582f9a90b37264
-from flask import Flask, request, redirect, render_template, session
-import mysql.connector
+from flask import Flask, request, redirect, render_template, session # pyright: ignore[reportMissingImports]
+import mysql.connector # pyright: ignore[reportMissingImports]
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -22,10 +17,6 @@ db = mysql.connector.connect(
 @app.route("/")
 def landing():
     return render_template("home.html")
-<<<<<<< HEAD
-
-=======
->>>>>>> d34156b0438b97ddb5574d37a1582f9a90b37264
 
 # Register
 @app.route("/register", methods=["GET", "POST"])
@@ -80,17 +71,15 @@ def login():
 
 
 # Logout
-<<<<<<< HEAD
 @app.route("/logout")
 def logout():
     session.pop("username", None)
     return redirect("/")
-=======
+
 #@app.route("/logout")
 #def logout():
  #   session.pop("username", None)
  #   return redirect("/")
->>>>>>> d34156b0438b97ddb5574d37a1582f9a90b37264
 
 
 @app.route("/index")
@@ -99,6 +88,9 @@ def index():
         return render_template("index.html")
     return redirect("/login")
 
+@app.route("/home")
+def home():
+    return render_template("home.html")
 
 # Static Heritage Pages
 @app.route("/festivals")
@@ -213,20 +205,114 @@ def kuchipudi():
 def kathakali():
     return render_template("kathakali.html")
 
-@app.route("/home")
-def home():
-    return render_template("home.html")
-
-<<<<<<< HEAD
-=======
 @app.route("/folk")
 def folk():
     return render_template("folk.html")
 
->>>>>>> d34156b0438b97ddb5574d37a1582f9a90b37264
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+# TAJ MAHAL
+@app.route("/tajmahal")
+def tajmahal():
+    return render_template("tajmahal.html")
+
+
+# RED FORT
+@app.route("/redfort")
+def redfort():
+    return render_template("redfort.html")
+
+
+# QUTUB MINAR
+@app.route("/qutubminar")
+def qutubminar():
+    return render_template("qutubminar.html")
+
+
+# GATEWAY OF INDIA
+@app.route("/gateway")
+def gateway():
+    return render_template("gateway.html")
+
+
+# HAWA MAHAL
+@app.route("/hawamahal")
+def hawamahal():
+    return render_template("hawamahal.html")
+
+
+# CHARMINAR
+@app.route("/charminar")
+def charminar():
+    return render_template("charminar.html")
+
+
+# MYSORE PALACE
+@app.route("/mysorepalace")
+def mysorepalace():
+    return render_template("mysorepalace.html")
+
+
+# INDIA GATE
+@app.route("/indiagate")
+def indiagate():
+    return render_template("indiagate.html")
+
+
+# KONARK SUN TEMPLE
+@app.route("/suntemple")
+def suntemple():
+    return render_template("suntemple.html")
+
+
+# GOLDEN TEMPLE
+@app.route("/goldentemple")
+def goldentemple():
+    return render_template("goldentemple.html")
+
+
+# AJANTA CAVES
+@app.route("/ajanta")
+def ajanta():
+    return render_template("ajantacave.html")
+
+
+# ELLORA CAVES
+@app.route("/ellora")
+def ellora():
+    return render_template("ellora.html")
+
+
+# VICTORIA MEMORIAL
+@app.route("/victoriamemorial")
+def victoriamemorial():
+    return render_template("victoriamemorial.html")
+
+
+# SANCHI STUPA
+@app.route("/sanchistupa")
+def sanchistupa():
+    return render_template("sanchistupa.html")
+
+
+# MEENAKSHI TEMPLE
+@app.route("/meenakshi")
+def meenakshi():
+    return render_template("meenakshi.html")
+
+
+# LOTUS TEMPLE
+@app.route("/lotustemple")
+def lotustemple():
+    return render_template("lotustemple.html")
+
+
+# Quiz Page
+@app.route("/quiz")
+def quiz():
+    return render_template("quiz.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
