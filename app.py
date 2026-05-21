@@ -234,7 +234,7 @@ def qutubminar():
 # GATEWAY OF INDIA
 @app.route("/gateway")
 def gateway():
-    return render_template("gateway.html")
+    return render_template("gatewayofindia.html")
 
 
 # HAWA MAHAL

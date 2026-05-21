@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian Culture Memory Game</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    body{
+    font-family: Arial;
+    background: #fff8e7;
+    text-align: center;
+}
+
+h1{
+    color: darkred;
+}
+
+.game-board{
+    width: 640px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    gap: 15px;
+}
+
+.card{
+    width: 120px;
+    height: 120px;
+    background: orange;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Indian Cultural Memory Puzzle</h1>
+
+<div class="game-board" id="gameBoard"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
