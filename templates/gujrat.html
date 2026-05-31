@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Punjab Folk Music</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(to right,#ffecd2,#fcb69f);
+    color:#222;
+}
+
+/* HERO SECTION */
+
+.hero{
+    height:100vh;
+    background:url('https://thumbs.dreamstime.com/b/culture-gujrat-illustration-depicting-india-41869332.jpg')
+    center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+    letter-spacing:3px;
+}
+
+.hero p{
+    font-size:24px;
+    font-style:italic;
+}
+
+/* ABOUT */
+
+.about{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.about h2{
+    font-size:45px;
+    margin-bottom:20px;
+    color:#d35400;
+}
+
+.about p{
+    font-size:20px;
+    line-height:1.8;
+    font-style:italic;
+}
+
+/* MUSIC SECTION */
+
+.music{
+    padding:60px 10%;
+    text-align:center;
+}
+
+.music h2{
+    font-size:45px;
+    margin-bottom:30px;
+    color:#c0392b;
+}
+
+.audio-box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    max-width:700px;
+    margin:auto;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.audio-box p{
+    margin-bottom:20px;
+    font-size:20px;
+    font-style:italic;
+}
+
+audio{
+    width:100%;
+}
+
+/* INSTRUMENTS */
+
+.instruments{
+    padding:80px 10%;
+}
+
+.instruments h2{
+    text-align:center;
+    font-size:45px;
+    margin-bottom:50px;
+    color:#8e44ad;
+}
+
+.cards{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap=20px;
+}
+
+.card{
+    width:280px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,0.2);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    margin-bottom:10px;
+    color:#e67e22;
+}
+
+.card-content p{
+    line-height:1.6;
+    font-style:italic;
+}
+
+/* FOOTER */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+.back-btn{
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 18px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.back-btn:hover{
+    background-color: #cc5200;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+        <h1>Gujrat Folk Music 🎵</h1>
+
+        <p>
+           Feel the rhythm of Garba beats, traditional folk melodies, and the vibrant cultural spirit of Gujarat.
+
+
+        </p>
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about">
+
+    <h2>About Gujrat Folk Music</h2>
+
+<p>
+    Gujarat folk music is one of the most colorful and energetic musical
+    traditions of India. It reflects the rich culture, traditions,
+    festivals, and joyful lifestyle of the people of Gujarat. Folk songs
+    are closely connected with village life, religious celebrations,
+    seasonal festivals, weddings, and traditional customs.
+</p>
+
+<br>
+
+<p>
+    The music is famous for its lively rhythms, devotional melodies,
+    and energetic performances that bring people together during cultural events.
+    Traditional dance forms like Garba and Dandiya Raas are performed with Gujarati
+    folk music during festivals and celebrations. These performances
+    express happiness, devotion, unity, and cultural pride.
+</p>
+
+<br>
+
+<p>
+    Gujarat folk music uses traditional instruments like the dhol,
+    manjira, shehnai, tabla, and nagada. The energetic beats of the dhol
+    and the rhythmic sounds of manjira create the unique identity
+    of Gujarati folk music.
+</p>
+
+<br>
+
+<p>
+    Folk songs of Gujarat are passed from generation to generation
+    and preserve the history, traditions, and emotions of Gujarati culture.
+    Popular themes in folk music include devotion, love, village life,
+    festivals, bravery, and the beauty of nature and deserts.
+</p>
+
+<br>
+
+<p>
+    Today, Gujarat folk music is loved across India and continues
+    to inspire modern music and cultural performances while keeping
+    the traditional heritage of Gujarat alive.
+</p>
+
+</section>
+
+<!-- MUSIC -->
+
+<section class="music">
+
+    <h2>Listen Gujrat Folk Music</h2>
+
+    <div class="audio-box">
+
+        <p>
+            Enjoy traditional Gujrat folk beats.
+        </p>
+
+        <audio controls>
+
+           <source src="/static/music/dpstudiomusic-royalty-free-india-music-bhangra-vibes-307654.mp3" type="audio/mpeg">
+
+           Your browser does not support audio.
+
+       </audio>
+
+    </div>
+
+</section>
+
+<!-- INSTRUMENTS -->
+
+<section class="instruments">
+
+    <h2>Traditional Instruments</h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <img src="https://as1.ftcdn.net/jpg/04/96/28/54/1000_F_496285443_3IzcSVnfhaBqIzeGIV3Is3Lv4YboV9pt.jpg">
+
+            <div class="card-content">
+
+                <h3>Mangira</h3>
+
+                <p>
+                    Small hand cymbals that produce rhythmic metallic sounds.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://darbar.org/wp-content/uploads/2025/05/Pakhawaj-played-by-Prathap-Awad-at-Darbar-Festival-2022-Milton-Court-Barbican-Centre-1.jpg">
+
+            <div class="card-content">
+
+                <h3>Pakhawaj</h3>
+
+                <p>
+                 A percussion instrument used in devotional and folk music.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjmdAbI27tzCm7NKgfoZLYj2R8l38YQIFpog&s">
+
+            <div class="card-content">
+
+                <h3>Jodia Pava</h3>
+
+                <p>
+                    A traditional double flute famous in Gujarat folk traditions.
+                </p>
+
+            </div>
+
+        </div>
+
+        
+        <div class="card">
+
+            <img src="https://t3.ftcdn.net/jpg/04/28/74/22/360_F_428742285_jDJ6Es2UAlKPFw1qZNHeTLmLcwtJwsLW.jpg">
+
+            <div class="card-content">
+
+                <h3>Ektara</h3>
+
+                <p>
+                    A single-string instrument used by folk singers.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<a href="/folk" class="back-btn">back</a>
+<!-- FOOTER -->
+
+<footer>
+
+    Gujrat Folk Music Website © 2026
+
+</footer>
+
+</body>
+</html>
