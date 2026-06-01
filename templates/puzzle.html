@@ -1,51 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Indian Culture Memory Game</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Indian Heritage Puzzle Game</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-    body{
-    font-family: Arial;
-    background: #fff8e7;
-    text-align: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-h1{
-    color: darkred;
+body{
+    background:linear-gradient(135deg,#fff6e9,#ffe0b2,#ffd180);
+    min-height:100vh;
+    padding:30px;
 }
 
-.game-board{
-    width: 640px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 120px);
-    gap: 15px;
+/* HEADER */
+.game-header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.game-header h1{
+    font-size:42px;
+    color:#7b1e00;
+    margin-bottom:10px;
+    text-shadow:2px 2px 10px rgba(0,0,0,0.15);
+}
+
+.game-header p{
+    color:#5a3c2f;
+    font-size:18px;
+}
+
+/* MAIN CONTAINER */
+.puzzle-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+/* LEFT SECTION */
+.left-section{
+    background:white;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+/* NAV LINKS */
+.nav{
+     justify-content:center;
+    display:flex;
+    gap:18px;
+    align-items:center;
+}
+
+.nav a{
+    text-decoration:none;
+    color:rgb(7, 7, 7);
+    font-weight:bold;
+    padding:8px 12px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+/* hover effect */
+.nav a:hover{
+    background:rgb(151, 57, 57);
+    color:#ff5722;
+}
+/* CONTROLS */
+.controls{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    margin-bottom:25px;
+    flex-wrap:wrap;
+}
+
+button{
+    border:none;
+    padding:14px 28px;
+    border-radius:14px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.start-btn{
+    background:#ff9800;
+    color:white;
+}
+
+.reset-btn{
+    background:#8e24aa;
+    color:white;
+}
+
+.shuffle-btn{
+    background:#009688;
+    color:white;
+}
+
+button:hover{
+    transform:translateY(-3px) scale(1.05);
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* TIMER */
+.timer{
+    text-align:center;
+    font-size:24px;
+    color:#d84315;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+/* PUZZLE GRID */
+.puzzle-board{
+    width:520px;
+    height:520px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:repeat(4,1fr);
+    gap:3px;
+    border-radius:20px;
+    overflow:hidden;
+    border:6px solid #ff9800;
+}
+
+.tile{
+    background-size:520px 520px;
+    border:1px solid rgba(255,255,255,0.6);
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.tile:hover{
+    transform:scale(0.97);
+}
+
+.empty{
+    background:white;
+    cursor:default;
+}
+
+/* RIGHT PANEL */
+.right-section{
+    width:320px;
 }
 
 .card{
-    width: 120px;
-    height: 120px;
-    background: orange;
-    color: white;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border-radius: 10px;
+    background:white;
+    border-radius:25px;
+    padding:20px;
+    margin-bottom:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.card h2{
+    text-align:center;
+    color:#7b1e00;
+    margin-bottom:15px;
+}
+
+.preview-img{
+    width:100%;
+    border-radius:20px;
+    border:4px solid #ffcc80;
+}
+
+/* LEVELS */
+.levels{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    max-height:500px;
+    overflow-y:auto;
+    padding-right:5px;
+}
+
+.level-btn{
+    background:#ffe0b2;
+    color:#6d4c41;
+}
+
+.level-btn:hover{
+    background:#ffb74d;
+    color:white;
+}
+.levels::-webkit-scrollbar{
+    width:8px;
+}
+
+.levels::-webkit-scrollbar-thumb{
+    background:#ff9800;
+    border-radius:10px;
+}
+
+/* WIN MESSAGE */
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:white;
+    width:400px;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.35);
+    transition:0.4s;
+    z-index:999;
+}
+
+.popup.active{
+    transform:translate(-50%,-50%) scale(1);
+}
+
+.popup h2{
+    color:#ff9800;
+    margin-bottom:10px;
+    font-size:32px;
+}
+
+.popup p{
+    margin-bottom:20px;
+    color:#444;
+}
+
+.popup button{
+    background:#ff9800;
+    color:white;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+    .puzzle-board{
+        width:350px;
+        height:350px;
+    }
+
+    .tile{
+        background-size:350px 350px;
+    }
+
+    .right-section{
+        width:100%;
+    }
+}
+
+@media(max-width:500px){
+
+    .puzzle-board{
+        width:300px;
+        height:300px;
+    }
+
+    .tile{
+        background-size:300px 300px;
+    }
+
+    .game-header h1{
+        font-size:30px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<h1>Indian Cultural Memory Puzzle</h1>
+<div class="game-header">
+    <h1>🧩 Indian Cultural Heritage Puzzle Game</h1>
+    <p>Explore India's Heritage Through Fun Interactive Puzzles</p>
+    <nav class="nav">
+    <a href="/home">Home</a>
+    <a href="/about">About Us</a>
+</nav>
+</div>
 
-<div class="game-board" id="gameBoard"></div>
+<div class="puzzle-container">
 
-<script src="script.js"></script>
+    <!-- LEFT -->
+    <div class="left-section">
+
+        <div class="controls">
+            <button class="start-btn" onclick="startGame()">Start Game</button>
+            <button class="shuffle-btn" onclick="shuffleTiles()">Shuffle</button>
+            <button class="reset-btn" onclick="resetGame()">Reset</button>
+        </div>
+
+        <div class="timer">
+            ⏳ Time Left: <span id="time">120</span>s
+        </div>
+
+        <div class="puzzle-board" id="board"></div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-section">
+
+        <div class="card">
+            <h2>Preview Image</h2>
+            <img id="preview" class="preview-img"
+            src="https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg">
+        </div>
+
+        <div class="card">
+            <h2>Select Puzzle</h2>
+
+            <div class="levels">
+
+                <button class="level-btn"
+                onclick="changeImage(0)">Taj Mahal</button>
+
+                <button class="level-btn"
+                onclick="changeImage(1)">Gateway</button>
+
+                <button class="level-btn"
+                onclick="changeImage(2)">Hawa Mahal</button>
+
+                <button class="level-btn"
+                onclick="changeImage(3)">Qutub Minar</button>
+
+                <button class="level-btn"
+                onclick="changeImage(4)">India Gate</button>
+
+                <button class="level-btn"
+                onclick="changeImage(5)">Lotus Temple</button>
+                <button class="level-btn"
+onclick="changeImage(6)">Charminar</button>
+
+<button class="level-btn"
+onclick="changeImage(7)">Mysore Palace</button>
+
+<button class="level-btn"
+onclick="changeImage(8)">Red Fort</button>
+
+<button class="level-btn"
+onclick="changeImage(9)">Konark Temple</button>
+
+<button class="level-btn"
+onclick="changeImage(10)">Golden Temple</button>
+
+<button class="level-btn"
+onclick="changeImage(11)">Ajanta Caves</button>
+
+<button class="level-btn"
+onclick="changeImage(12)">Victoria Memorial</button>
+
+<button class="level-btn"
+onclick="changeImage(13)">Sanchi Stupa</button>
+
+<button class="level-btn"
+onclick="changeImage(14)">Brihadeeswara</button>
+
+<button class="level-btn"
+onclick="changeImage(15)">Rani Ki Vav</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <h2>🎉 Congratulations!</h2>
+    <p>You solved the puzzle successfully!</p>
+    <button onclick="closePopup()">Play Again</button>
+</div>
+
+<script>
+
+const board = document.getElementById("board");
+const preview = document.getElementById("preview");
+const popup = document.getElementById("popup");
+
+const images = [
+"https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg",
+"https://i.pinimg.com/736x/5c/f1/38/5cf138aff43945c2d3265bdcf4770839.jpg",
+"https://t3.ftcdn.net/jpg/01/87/66/72/360_F_187667273_tfO0T8L0WfJvBcHB7vWxY20bbxJtO2b7.jpg",
+"https://www.thedelhitours.com/blog/wp-content/uploads/2024/09/Qutub-Minar.jpg",
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI8b67cAGu_9aYXbIXC_6jmo-3gd7Hi1Kp0g&s",
+"https://file.bahai.media/thumb/b/b9/Lotus_temple.jpg/250px-Lotus_temple.jpg",
+
+/* NEW IMAGES */
+
+"https://www.shutterstock.com/image-photo/hyderabadindia-december-23-2022-charminar-600nw-2545998573.jpg",
+
+"https://t4.ftcdn.net/jpg/02/48/51/93/360_F_248519351_gi01kb7m3MDrxyuIWdpq84YFK7woCQJj.jpg",
+
+"https://thumbs.dreamstime.com/b/witness-majestic-sunrise-over-red-fort-delhi-india-timeless-monument-mughal-architecture-experience-breathtaking-381243921.jpg",
+
+"https://t3.ftcdn.net/jpg/13/02/68/20/360_F_1302682029_lMTeWxnr1OR3TaiXEHqyyd4umZeZGGjo.jpg",
+
+"https://media.istockphoto.com/id/535570117/photo/golden-temple-in-amritsar-punjab-india.jpg?s=612x612&w=0&k=20&c=TAgZK64Qz6YsljOK1rXZrrW1u1YSlb9e_YBEmm2pfBw=",
+
+"https://media.gettyimages.com/id/1216266283/photo/the-kailasa-temple-is-one-of-the-largest-rock-cut-ancient-hindu-temples-and-is-one-of-the-34.jpg?s=612x612&w=gi&k=20&c=PImqhuLBui4au9up0MpOtESKyE8txLeGgiOMQIhk5QU=",
+
+"https://images.unsplash.com/photo-1558431382-9b06d0507edc?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmljdG9yaWElMjBtZW1vcmlhbHxlbnwwfHwwfHx8MA%3D%3D",
+
+"https://media.istockphoto.com/id/1343698809/photo/sanchi-is-a-buddhist-complex-famous-for-its-great-stupa-on-a-hilltop-at-sanchi-town-in-raisen.jpg?s=612x612&w=0&k=20&c=KxC8TlKfCc_tEv1MRsQVCDsZPJi_moXxkMy4IGW8fv0=",
+
+"https://t4.ftcdn.net/jpg/05/58/64/17/360_F_558641735_r64vTIWibgjdz1CGMWssVo11jU8DaLvI.jpg",
+
+"https://www.tourmyindia.com/heritage/images/rani-ki-vav1.jpg"
+];
+
+let currentImage = images[0];
+let tiles = [];
+let emptyIndex = 15;
+let timer;
+let timeLeft = 120;
+
+/* CREATE BOARD */
+function createBoard(){
+
+    board.innerHTML = "";
+    tiles = [];
+
+    for(let i=0;i<16;i++){
+
+        const tile = document.createElement("div");
+        tile.classList.add("tile");
+
+        if(i === 15){
+            tile.classList.add("empty");
+        }else{
+
+            let x = (i % 4) * 33.33;
+            let y = Math.floor(i / 4) * 33.33;
+
+            tile.style.backgroundImage = `url(${currentImage})`;
+            tile.style.backgroundPosition = `${x}% ${y}%`;
+        }
+
+        tile.dataset.index = i;
+
+        tile.addEventListener("click",()=>moveTile(i));
+
+        board.appendChild(tile);
+        tiles.push(tile);
+    }
+}
+
+/* MOVE TILE */
+function moveTile(index){
+
+    const validMoves = [
+        emptyIndex -1,
+        emptyIndex +1,
+        emptyIndex -4,
+        emptyIndex +4
+    ];
+
+    if(validMoves.includes(index)){
+
+        if(
+            (emptyIndex %4===0 && index===emptyIndex-1) ||
+            (emptyIndex %4===3 && index===emptyIndex+1)
+        ){
+            return;
+        }
+
+        swapTiles(index,emptyIndex);
+        emptyIndex=index;
+
+        checkWin();
+    }
+}
+
+/* SWAP */
+function swapTiles(i,j){
+
+    let tempBg = tiles[i].style.backgroundImage;
+    let tempPos = tiles[i].style.backgroundPosition;
+
+    tiles[i].style.backgroundImage =
+    tiles[j].style.backgroundImage;
+
+    tiles[i].style.backgroundPosition =
+    tiles[j].style.backgroundPosition;
+
+    tiles[j].style.backgroundImage = tempBg;
+    tiles[j].style.backgroundPosition = tempPos;
+
+    tiles[i].classList.toggle("empty");
+    tiles[j].classList.toggle("empty");
+}
+
+/* SHUFFLE */
+function shuffleTiles(){
+
+    for(let i=0;i<300;i++){
+
+        let moves=[];
+
+        if(emptyIndex%4!==0) moves.push(emptyIndex-1);
+        if(emptyIndex%4!==3) moves.push(emptyIndex+1);
+        if(emptyIndex-4>=0) moves.push(emptyIndex-4);
+        if(emptyIndex+4<16) moves.push(emptyIndex+4);
+
+        let randomMove = moves[Math.floor(Math.random()*moves.length)];
+
+        swapTiles(randomMove,emptyIndex);
+        emptyIndex=randomMove;
+    }
+}
+
+/* START */
+function startGame(){
+
+    shuffleTiles();
+
+    clearInterval(timer);
+
+    timeLeft = 120;
+    document.getElementById("time").innerText = timeLeft;
+
+    timer = setInterval(()=>{
+
+        timeLeft--;
+
+        document.getElementById("time").innerText = timeLeft;
+
+        if(timeLeft<=0){
+
+            clearInterval(timer);
+            alert("⏰ Time Over! Try Again.");
+        }
+
+    },1000);
+}
+
+/* RESET */
+function resetGame(){
+
+    clearInterval(timer);
+    timeLeft=120;
+    document.getElementById("time").innerText=timeLeft;
+
+    createBoard();
+}
+
+/* CHECK WIN */
+function checkWin(){
+
+    let win=true;
+
+    for(let i=0;i<15;i++){
+
+        let correctX = (i % 4) * 33.33 + "%";
+        let correctY = Math.floor(i / 4) * 33.33 + "%";
+
+        if(
+            tiles[i].style.backgroundPosition !==
+            `${correctX} ${correctY}`
+        ){
+            win=false;
+            break;
+        }
+    }
+
+    if(win){
+
+        clearInterval(timer);
+
+        setTimeout(()=>{
+            popup.classList.add("active");
+        },300);
+    }
+}
+
+/* CLOSE POPUP */
+function closePopup(){
+
+    popup.classList.remove("active");
+    resetGame();
+}
+
+/* CHANGE IMAGE */
+function changeImage(index){
+
+    currentImage = images[index];
+
+    preview.src = currentImage;
+
+    createBoard();
+}
+
+createBoard();
+
+</script>
 
 </body>
 </html>

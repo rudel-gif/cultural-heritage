@@ -197,6 +197,10 @@ def mohiniyattam():
 def odissi():
     return render_template("odissi.html")
 
+@app.route("/sattriya")
+def sattriya():
+    return render_template("sattriya.html")
+
 @app.route("/kuchipudi")
 def kuchipudi():
     return render_template("kuchipudi.html")
@@ -250,9 +254,9 @@ def charminar():
 
 
 # MYSORE PALACE
-@app.route("/mysorepalace")
-def mysorepalace():
-    return render_template("mysorepalace.html")
+@app.route("/mysore")
+def mysore():
+    return render_template("mysore.html")
 
 
 # INDIA GATE
@@ -280,15 +284,15 @@ def ajanta():
 
 
 # ELLORA CAVES
-@app.route("/ellora")
+@app.route("/elloracave")
 def ellora():
-    return render_template("ellora.html")
+    return render_template("elloracave.html")
 
 
 # VICTORIA MEMORIAL
 @app.route("/victoriamemorial")
 def victoriamemorial():
-    return render_template("victoriamemorial.html")
+    return render_template("victoriamem.html")
 
 
 # SANCHI STUPA
@@ -300,7 +304,7 @@ def sanchistupa():
 # MEENAKSHI TEMPLE
 @app.route("/meenakshi")
 def meenakshi():
-    return render_template("meenakshi.html")
+    return render_template("meenakshitemple.html")
 
 
 # LOTUS TEMPLE
@@ -313,6 +317,10 @@ def lotustemple():
 @app.route("/quiz")
 def quiz():
     return render_template("quiz.html")
+#Puzzle page
+@app.route("/puzzle")
+def puzzle():
+    return render_template("puzzle.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -257,7 +257,25 @@
                 height:400px;
             }
         }
+.back-btn{
+    position:absolute;
+    top:20px;
+    left:20px;
+    background:#ff6600;
+    color:white;
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:bold;
+    transition:0.3s;
+    z-index:100;
+}
 
+.back-btn:hover{
+    background:#ff3300;
+    transform:scale(1.05);
+}
     </style>
 </head>
 
@@ -265,7 +283,9 @@
 
     <!-- HERO SECTION -->
     <section class="hero">
-
+ <a href="monuments.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Monuments
+    </a>
         <div class="hero-content">
             <h1>Red Fort</h1>
             <p>The Pride of Mughal Architecture</p>

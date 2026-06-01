@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Victoria Memorial - Cultural Heritage of India</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+width:100%;
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9EXkNlvKAogRbK_iYfXbzIURt0taZ6PD3Iw&s');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero-content h1{
+font-size:75px;
+margin-bottom:20px;
+text-shadow:3px 3px 10px black;
+}
+
+.hero-content p{
+font-size:25px;
+margin-bottom:30px;
+}
+
+.btn{
+background:#2c3e50;
+color:white;
+padding:15px 35px;
+text-decoration:none;
+border-radius:50px;
+font-size:20px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#1a252f;
+transform:scale(1.05);
+}
+
+/* SECTION TITLE */
+
+.section-title{
+text-align:center;
+font-size:45px;
+margin-top:50px;
+margin-bottom:30px;
+color:#333;
+}
+
+/* ABOUT */
+
+.about{
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+align-items:center;
+margin-bottom:60px;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.about-text{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+line-height:1.8;
+font-size:18px;
+}
+
+/* MORE INFO */
+
+.more-info-section{
+width:90%;
+margin:auto;
+margin-bottom:60px;
+}
+
+.more-info-box{
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+line-height:1.9;
+font-size:18px;
+}
+
+.more-info-box h3{
+color:#2c3e50;
+margin-top:15px;
+margin-bottom:10px;
+}
+
+.more-btn{
+margin-top:20px;
+background:#2c3e50;
+color:white;
+border:none;
+padding:14px 30px;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.more-btn:hover{
+background:#1a252f;
+}
+
+#extraInfo{
+margin-top:25px;
+}
+
+/* GALLERY */
+
+.gallery{
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-bottom:60px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+transition:0.4s;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* FACTS */
+
+.facts{
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-bottom:60px;
+}
+
+.fact-card{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.fact-card:hover{
+transform:translateY(-10px);
+}
+
+.fact-card i{
+font-size:50px;
+color:#2c3e50;
+margin-bottom:20px;
+}
+
+/* VIEWER */
+
+.viewer-section{
+width:90%;
+margin:auto;
+margin-bottom:60px;
+}
+
+.viewer-box{
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+iframe{
+width:100%;
+height:750px;
+border:none;
+border-radius:15px;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+font-size:18px;
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:42px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+.section-title{
+font-size:32px;
+}
+
+iframe{
+height:400px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Victoria Memorial</h1>
+
+<p>The Marble Jewel of Kolkata</p>
+
+<a href="#viewer" class="btn">Explore in 3D</a>
+
+</div>
+
+</section>
+
+<h2 class="section-title">About Victoria Memorial</h2>
+
+<section class="about">
+
+<img src="https://images.unsplash.com/photo-1651651166379-06540f274707?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmljdG9yaWElMjBtZW1vcmlhbHxlbnwwfHwwfHx8MA%3D%3D">
+
+<div class="about-text">
+
+<p>
+The Victoria Memorial is one of the most iconic monuments in Kolkata, West Bengal.
+Built in memory of Queen Victoria, it is one of India's finest examples of Indo-Saracenic architecture.
+</p>
+
+<br>
+
+<p>
+Constructed using white Makrana marble, the memorial combines British, Mughal, Venetian, and Egyptian architectural influences.
+</p>
+
+<br>
+
+<p>
+Today, it serves as a museum showcasing paintings, historical artifacts, manuscripts, and galleries related to India's colonial history.
+</p>
+
+</div>
+
+</section>
+
+<h2 class="section-title">Explore More About Victoria Memorial</h2>
+
+<section class="more-info-section">
+
+<div class="more-info-box">
+
+<p>
+Victoria Memorial is one of the most visited landmarks in Kolkata and a symbol of the city's rich historical heritage.
+</p>
+
+<button class="more-btn" onclick="showMoreInfo()">
+Read More
+</button>
+
+<div id="extraInfo" style="display:none;">
+
+<h3>Location</h3>
+
+<p>
+The Victoria Memorial is located in Kolkata, West Bengal, on the famous Maidan grounds.
+</p>
+
+<h3>History</h3>
+
+<p>
+The memorial was proposed by Lord Curzon after the death of Queen Victoria in 1901.
+Construction began in 1906 and the monument was opened in 1921.
+</p>
+
+<h3>Architecture</h3>
+
+<p>
+The structure is built from white Makrana marble and features a grand central dome, decorative sculptures, and beautiful gardens.
+</p>
+
+<h3>Main Attractions</h3>
+
+<ul>
+
+<li>Central Dome and Angel of Victory</li>
+
+<li>Historical Museum Galleries</li>
+
+<li>Royal Portrait Collections</li>
+
+<li>Beautiful Landscaped Gardens</li>
+
+<li>Colonial Architecture</li>
+
+</ul>
+
+<h3>Museum Collections</h3>
+
+<p>
+The memorial contains paintings, rare books, manuscripts, sculptures, royal artifacts, and historical exhibits.
+</p>
+
+<h3>Interesting Facts</h3>
+
+<ul>
+
+<li>Built between 1906 and 1921.</li>
+
+<li>Made from the same Makrana marble used for the Taj Mahal.</li>
+
+<li>Features Indo-Saracenic architecture.</li>
+
+<li>One of Kolkata's most famous tourist attractions.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<h2 class="section-title">Beautiful Gallery</h2>
+
+<section class="gallery">
+
+<img src="https://d3w13n53foase7.cloudfront.net/medium_a6e491ae_eb54_4df6_8c0f_01cae959a6fc_6081b7d0_c0ae_404a_b6f7_7deecec265bd_victoria_memorial_2394784_1920_3_62156c21a4.jpg">
+
+<img src="https://www.savaari.com/blog/wp-content/uploads/2023/07/Kolkata-India-Victoria-Memorial1.webp">
+
+<img src="https://s7ap1.scene7.com/is/image/incredibleindia/victoria-memorial-kolkata-wb-2-attr-hero?qlt=82&ts=1742980964534">
+
+<img src="https://res.cloudinary.com/kmadmin/image/upload/v1724217244/kiomoi/victoria_memorial_2480.jpg">
+
+</section>
+
+<h2 class="section-title">Interesting Facts</h2>
+
+<section class="facts">
+
+<div class="fact-card">
+<i class="fa-solid fa-landmark"></i>
+<h3>Historic Monument</h3>
+<p>Built in memory of Queen Victoria.</p>
+</div>
+
+<div class="fact-card">
+<i class="fa-solid fa-building-columns"></i>
+<h3>Indo-Saracenic Design</h3>
+<p>Blends British and Mughal architectural styles.</p>
+</div>
+
+<div class="fact-card">
+<i class="fa-solid fa-gem"></i>
+<h3>Makrana Marble</h3>
+<p>Constructed using the same marble as the Taj Mahal.</p>
+</div>
+
+<div class="fact-card">
+<i class="fa-solid fa-book"></i>
+<h3>Museum Galleries</h3>
+<p>Contains rare books, paintings, and artifacts.</p>
+</div>
+
+</section>
+
+<h2 class="section-title" id="viewer">3D Virtual Tour</h2>
+
+<section class="viewer-section">
+
+<div class="viewer-box">
+
+<iframe
+title="Victoria Memorial 3D Tour"
+allowfullscreen
+src="https://www.youtube.com/embed/R0bAOLRL9as">
+</iframe>
+
+</div>
+
+</section>
+
+<script>
+
+function showMoreInfo(){
+
+let info=document.getElementById("extraInfo");
+
+if(info.style.display==="none"){
+info.style.display="block";
+}
+else{
+info.style.display="none";
+}
+
+}
+
+</script>
+
+<footer>
+© 2026 Cultural Heritage of India | Victoria Memorial Virtual Experience
+</footer>
+
+</body>
+</html>

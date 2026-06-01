@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Odissi Dance</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    text-align: center;
+    margin: 40px;
+    background-color: #fff5e6;
+}
+
+/* Title */
+.title{
+    color: #ff6600;
+    font-size: 40px;
+}
+
+/* Main Image */
+.dance-img{
+    width:250px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+/* Paragraph */
+p{
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: justify;
+}
+
+/* Section Heading */
+h2{
+    color:#ff6600;
+    text-align: center;
+}
+
+/* Gallery Images */
+.gallery img{
+    width:300px;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+    margin:10px;
+}
+
+/* Back Button */
+.back-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:10px 18px;
+    background-color:#ff6600;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.back-btn:hover{
+    background-color:#cc5200;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 class="title">Odissi – Classical Dance</h1>
+
+<img src="{{ url_for('static', filename='dance_poses/odissi.jpg') }}" class="dance-img">
+
+<p>
+Odissi is one of the oldest classical dance forms of India and originated in the state of Odisha. It is known for its graceful movements, expressive gestures, and sculpturesque poses that resemble the ancient temple carvings of Odisha.
+</p>
+
+<p>
+The dance combines rhythm, emotion, and storytelling to depict themes from Hindu mythology, especially the stories of Lord Krishna and Radha. Odissi dancers perform with elegance and precision, making it one of the most visually captivating dance forms.
+</p>
+
+<p>
+Traditional Odissi performances are accompanied by classical Odissi music and instruments such as the mardala, flute, violin, and sitar.
+</p>
+
+<h2>History</h2>
+
+<p>
+Odissi traces its roots back over 2,000 years and was originally performed by temple dancers known as Maharis in the temples of Odisha. The dance form flourished under royal patronage and was revived in the 20th century after a period of decline.
+</p>
+
+<h2>Main Elements</h2>
+
+<p><b>Tribhangi:</b> A three-bend posture involving the head, torso, and knee.</p>
+
+<p><b>Chowka:</b> A square-like stance symbolizing strength and stability.</p>
+
+<p><b>Abhinaya:</b> Expressive storytelling through facial expressions and gestures.</p>
+
+<p><b>Mudras:</b> Hand gestures used to convey meanings and emotions.</p>
+
+<p><b>Costume:</b> Traditional silk sarees with silver jewelry and decorative headpieces.</p>
+
+<h2>Gallery</h2>
+
+<div class="gallery">
+    <img src="{{ url_for('static', filename='dance_poses/odissi1.jpg') }}">
+    <img src="{{ url_for('static', filename='dance_poses/odissi2.jpg') }}">
+    <img src="{{ url_for('static', filename='dance_poses/odissi3.jpg') }}">
+    <img src="{{ url_for('static', filename='dance_poses/odissi4.jpg') }}">
+</div>
+
+<a href="/classicaldance" class="back-btn">Back</a>
+
+</body>
+
+<footer style="padding:1cm;"></footer>
+</html>

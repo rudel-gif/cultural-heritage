@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sattriya Dance</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    text-align: center;
+    margin: 40px;
+    background-color: #fff5e6;
+}
+
+/* Title */
+.title{
+    color: #ff6600;
+    font-size: 40px;
+}
+
+/* Main Image */
+.dance-img{
+    width:250px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+/* Paragraph */
+p{
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: justify;
+}
+
+/* Section Heading */
+h2{
+    color:#ff6600;
+    text-align: center;
+}
+
+/* Gallery Images */
+.gallery img{
+    width:300px;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+    margin:10px;
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:10px 18px;
+    background-color:#ff6600;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.back-btn:hover{
+    background-color:#cc5200;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 class="title">Sattriya – Classical Dance</h1>
+
+<img src="{{ url_for('static', filename='dance_poses/sattriya5.jpg') }}" class="dance-img">
+<p>
+Sattriya is one of the eight classical dance forms of India and originated in the state of Assam.
+It was introduced by the great saint, scholar, and social reformer Srimanta Sankardev during the 15th century as a medium for spreading devotion and spiritual teachings.
+</p>
+
+<p>
+The dance form combines graceful movements, expressive storytelling, devotional music, and drama.
+Sattriya performances often depict stories from the life of Lord Krishna, the Bhagavata Purana, and other Vaishnavite traditions.
+</p>
+
+<p>
+Originally performed by monks in Vaishnavite monasteries called Sattras, Sattriya has evolved into a popular stage performance while preserving its spiritual and cultural essence.
+</p>
+
+<h2>History</h2>
+
+<p>
+Sattriya was created by Srimanta Sankardev and his disciple Madhavdev as part of the Neo-Vaishnavite movement in Assam.
+The dance was traditionally performed inside Sattras (monasteries) as a form of worship and religious expression.
+In the year 2000, Sattriya was officially recognized as one of India's classical dance forms.
+</p>
+
+<h2>Main Elements</h2>
+
+<p><b>Nritta:</b> Pure rhythmic dance movements.</p>
+
+<p><b>Nritya:</b> Expressive dance conveying emotions and devotion.</p>
+
+<p><b>Natya:</b> Dance-drama based storytelling.</p>
+
+<p><b>Bhaona:</b> Traditional theatrical performances depicting religious stories.</p>
+
+<p><b>Borgeet:</b> Devotional songs composed by Sankardev and Madhavdev.</p>
+
+<h2>Costume and Music</h2>
+
+<p>
+Sattriya dancers traditionally wear costumes made of Assam silk, especially Pat and Muga silk.
+The music includes traditional instruments such as the Khol (drum), Cymbals, Flute, and devotional Borgeet songs.
+</p>
+
+<h2>Gallery</h2>
+
+<div class="gallery">
+
+<img src="{{ url_for('static', filename='dance_poses/sattriya1.jpg') }}">
+
+<img src="{{ url_for('static', filename='dance_poses/sattriya2.jpg') }}">
+
+<img src="{{ url_for('static', filename='dance_poses/sattriya3.jpg') }}">
+
+<img src="{{ url_for('static', filename='dance_poses/sattriya4.jpg') }}">
+
+<img src="{{ url_for('static', filename='dance_poses/sattriya5.jpg') }}">
+
+</div>
+
+<a href="/classicaldance" class="back-btn">Back</a>
+
+</body>
+
+<footer style="padding:1cm;"></footer>
+
+</html>
