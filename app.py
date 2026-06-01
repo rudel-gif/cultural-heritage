@@ -9,7 +9,7 @@ app.secret_key = "culturalheritage_secret"
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Jadhav@1234",
+    password="Rudrayani@123",
     database="cultural_heritage"
 )
 
@@ -321,6 +321,47 @@ def quiz():
 @app.route("/puzzle")
 def puzzle():
     return render_template("puzzle.html")
+
+@app.route("/panjab")
+def panjab():
+    return render_template("panjab.html")
+
+@app.route("/westfolk")
+def westfolk():
+    return render_template("westfolk.html")
+
+@app.route("/maha")
+def maha():
+    return render_template("maha.html")
+
+@app.route("/Rajs")
+def Rajs():
+    return render_template("Rajs.html")
+
+@app.route("/Ass")
+def Ass():
+    return render_template("Ass.html")
+
+@app.route("/gujrat")
+def gujrat():
+    return render_template("gujrat.html")
+
+@app.route("/up")
+def up():
+    return render_template("up.html")
+
+@app.route("/goa")
+def goa():
+    return render_template("goa.html")
+
+@app.route("/kashmir")
+def kashmir():
+    return render_template("kashmir.html")
+
+@app.route("/tamil")
+def tamil():
+    return render_template("tamil.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
