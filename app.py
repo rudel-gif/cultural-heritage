@@ -1,7 +1,6 @@
-from flask import Flask, request, redirect, render_template, session # pyright: ignore[reportMissingImports]
+from flask import Flask, request, redirect, render_template, session  # type: ignore
 import mysql.connector # pyright: ignore[reportMissingImports]
-from werkzeug.security import generate_password_hash, check_password_hash
-
+from werkzeug.security import generate_password_hash, check_password_hash  # type: ignore
 app = Flask(__name__)
 app.secret_key = "culturalheritage_secret"
 
@@ -9,7 +8,7 @@ app.secret_key = "culturalheritage_secret"
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Rudrayani@123",
+    password="Jadhav@1234",
     database="cultural_heritage"
 )
 
@@ -26,6 +25,10 @@ def register():
         email = request.form["email"]
         username = request.form["username"]
         password = request.form["password"]
+        confirm_password = request.form["confirm_password"]
+
+        if password != confirm_password:
+           return "Passwords do not match"
 
         hashed_password = generate_password_hash(password)
 
